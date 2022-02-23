@@ -1,5 +1,7 @@
 import "../scss/main.scss";
 import "../index.html";
+import "../get.html";
+import "../return.html";
 import Swiper, { Pagination } from "swiper";
 
 import "../../node_modules/swiper/swiper.scss";

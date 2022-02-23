@@ -1,18 +1,23 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
+const pages = ["index", "get", "return"];
 module.exports = {
   entry: "./app/js/main.js",
   output: {
     assetModuleFilename: "[path][name][ext]",
   },
 
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: "./app/index.html",
-      hash: false,
-    }),
-  ],
+  plugins: [].concat(
+    pages.map(
+      (page) =>
+        new HtmlWebpackPlugin({
+          inject: true,
+          template: `./app/${page}.html`,
+          filename: `${page}.html`,
+        })
+    )
+  ),
   module: {
     rules: [
       {

@@ -9,9 +9,6 @@
     grid-template-columns: 45px 1fr;
     column-gap: 15px;
     padding-bottom: 25px;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 20px;
 
     &::before {
       content: counters(item, "");
@@ -21,14 +18,47 @@
       background: $light-grey;
       border-radius: 15px;
       font-size: 18px;
+      font-weight: 600;
       line-height: 45px;
       text-align: center;
     }
 
+    h3 {
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 20px;
+    }
+
+    .list-text {
+      padding-top: 10px;
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    p {
+      margin: 0;
+      padding: 0;
+    }
     @media (min-width: $bp-md) {
       padding-bottom: 30px;
-      font-size: 20px;
-      line-height: 30px;
+      grid-template-columns: 70px 1fr;
+      column-gap: 30px;
+
+      &::before {
+        height: 70px;
+        font-size: 25px;
+        line-height: 70px;
+      }
+
+      h3 {
+        font-size: 20px;
+        line-height: 30px;
+      }
+
+      .list-text {
+        font-size: 15px;
+        line-height: 22px;
+      }
     }
   }
 

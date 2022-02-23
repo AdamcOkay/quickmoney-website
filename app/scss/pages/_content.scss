@@ -1,0 +1,27 @@
+.contentpage {
+  .content-wrapper {
+    padding-top: 30px;
+    padding-bottom: 75px;
+  }
+
+  h1 {
+    margin-bottom: 25px;
+    font-size: 23px;
+    line-height: 30px;
+
+    @media (min-width: $bp-tab) {
+      margin-bottom: 50px;
+      font-size: 35px;
+      line-height: 45px;
+    }
+  }
+
+  .button {
+    margin-left: auto;
+  }
+
+  .content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}

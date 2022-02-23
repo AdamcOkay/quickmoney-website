@@ -25,12 +25,7 @@ footer {
     padding: 75px 0;
 
     &::before {
-      top: -450px;
-      left: 0;
-      width: 1560px;
-      height: 1413px;
-      background: url("/assets/bg/blur-footer.png");
-      transform: none;
+      display: none;
     }
   }
 }
@@ -45,6 +40,7 @@ footer {
 
 .footer-title {
   padding: 10px 0 20px;
+  margin: 0;
   font-size: 16px;
   font-weight: 500;
   line-height: 20px;
