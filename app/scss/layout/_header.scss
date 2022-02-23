@@ -1,0 +1,15 @@
+header {
+  position: relative;
+  padding: 10px 15px;
+  max-width: 1920px;
+  margin: 0 auto;
+  color: #fff;
+  z-index: 3;
+
+  a {
+    color: #fff;
+  }
+  @media (min-width: $bp-tab) {
+    padding: 20px;
+  }
+}

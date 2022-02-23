@@ -1,0 +1,34 @@
+.container {
+  position: relative;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+  z-index: 2;
+
+  @media (min-width: $bp-mob) {
+    max-width: $container-max-width-mob;
+  }
+
+  @media (min-width: $bp-tab) {
+    max-width: $container-max-width-tab;
+    padding: 0;
+  }
+
+  @media (min-width: $bp-md) {
+    max-width: $container-max-width-md;
+  }
+
+  @media (min-width: $bp-lg) {
+    max-width: $container-max-width-lg;
+  }
+
+  @media (min-width: $bp-xl) {
+    max-width: $container-max-width;
+  }
+}
+
+.button-reset {
+  border: none;
+  outline: none;
+  background: none;
+}

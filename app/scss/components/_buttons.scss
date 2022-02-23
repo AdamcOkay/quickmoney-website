@@ -1,0 +1,33 @@
+.button {
+  display: block;
+  max-width: 330px;
+  padding: 18px 0;
+  border-radius: 5px;
+  background: $primary-yellow;
+  color: #000;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 16px;
+  text-decoration: none;
+
+  &--secondary {
+    max-width: unset;
+    width: fit-content;
+    padding: 18px 30px;
+    margin-top: 5px;
+  }
+
+  @media (min-width: $bp-md) {
+    padding: 21px 0;
+    font-size: 18px;
+    line-height: 18px;
+
+    &--secondary {
+      max-width: 330px;
+      width: 100%;
+      padding: 21px 0;
+    }
+  }
+}

@@ -1,0 +1,184 @@
+.primary-nav {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 48px;
+    line-height: 100%;
+
+    @media (min-width: $bp-tab) {
+      max-width: 80px;
+      width: 100%;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .lang__item,
+  .phone .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50px;
+    border: 2px solid #ffffff;
+  }
+
+  .login-button .icon {
+    display: block;
+    width: 30px;
+    height: 30px;
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+    path {
+      stroke-width: 1;
+    }
+  }
+
+  .lang {
+    margin-left: auto;
+
+    &__item {
+      font-size: 12px;
+      line-height: 15px;
+    }
+  }
+
+  .lang,
+  .phone,
+  .login-button {
+    margin-right: 10px;
+  }
+
+  .lang__item--active {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+    position: relative;
+    width: 25px;
+    height: 30px;
+    padding: 0;
+
+    &__inner {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      width: calc(100% - 5px);
+      height: 2px;
+      background: #fff;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: #fff;
+      }
+
+      &::before {
+        top: -6px;
+      }
+
+      &::after {
+        bottom: -6px;
+      }
+    }
+  }
+
+  .login-button,
+  .phone {
+    .text {
+      display: none;
+    }
+  }
+
+  @media (min-width: $bp-md) {
+    .lang__item,
+    .phone .icon {
+      display: inline;
+      width: auto;
+      height: auto;
+      border: none;
+      border-radius: 0;
+    }
+
+    .lang {
+      display: flex;
+      margin-left: 30px;
+      margin-right: auto;
+
+      &__item {
+        font-size: 14px;
+        line-height: 17px;
+      }
+    }
+
+    .lang__item--active {
+      display: block;
+      color: $primary-yellow;
+      padding-right: 10px;
+      margin-right: 10px;
+      border-right: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    .login-button,
+    .phone {
+      .text {
+        display: block;
+      }
+    }
+
+    .phone,
+    .login-button {
+      display: flex;
+      align-items: center;
+    }
+
+    .phone {
+      padding-left: 10px;
+
+      .icon {
+        width: 18px;
+        height: 18px;
+        margin-right: 5px;
+      }
+    }
+
+    .login-button {
+      padding: 11px 30px 11px 25px;
+      margin-left: 30px;
+      background: $primary-yellow;
+      border-radius: 5px;
+      color: #000;
+
+      .icon {
+        width: 18px;
+        height: 18px;
+        margin-right: 10px;
+        path {
+          stroke: #000;
+          stroke-width: 1.62;
+        }
+      }
+    }
+
+    .hamburger {
+      display: none;
+    }
+  }
+}
