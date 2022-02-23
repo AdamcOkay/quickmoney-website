@@ -10,7 +10,7 @@ module.exports = merge(common, {
     path: path.resolve(__dirname, "build"),
   },
   devServer: {
-    port: 8081,
+    port: 8080,
     client: {
       overlay: true,
     },
