@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+// 1. Переменные, миксины и функций
+@import "abstracts/variables";
+
+// 2. Сторонние стили. В этом случая обнуление css
+@import "vendors/normalize";
+
+// 3. Основные стили
+@import "base/base", 
+        "base/typography", 
+        "base/helpers";
+
+// 4. Стили для блоков страницы
+@import "layout/header", 
+        "layout/main-nav", 
+        "layout/menu", 
+        "layout/footer";
+
+// 5. Компоненты
+@import "components/buttons", // кнопки на сайте
+        "components/carousel", // карусель отзывов
+        "components/accordions", // аккардеоны
+        "components/filelinks", // ссылки на файлы
+        "components/modals", // модальные окна
+        "components/sliders", // бегунки
+        "components/dropdowns"; // выпадающие списки
+
+// 6. Стили для страниц
+@import "pages/content", 
+        "pages/contacts", 
+        "pages/application",
+        "pages/login",
+        "pages/signin",
+        "pages/profile", 
+        "pages/home";
