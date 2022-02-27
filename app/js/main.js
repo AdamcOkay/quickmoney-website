@@ -110,12 +110,12 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   // Вызываем функцию перестройки аккордеонов на десктопах
-  let resizeTimer;
+  // let resizeTimer;
 
-  window.addEventListener("resize", () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(branchDesktopAccordions, 100);
-  });
+  // window.addEventListener("resize", () => {
+  //   clearTimeout(resizeTimer);
+  //   resizeTimer = setTimeout(branchDesktopAccordions, 100);
+  // });
 
   // функция смены карты на десктопе
   const changeMap = (activeAccordion) => {
