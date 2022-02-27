@@ -154,7 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
       branchAccordions.forEach((accordion) => {
         const branchAccordionBody = accordion.querySelector(".accordion__body");
 
-        branchAccordionBody.style.maxHeight = 0;
+        branchAccordionBody.style.maxHeight = null;
       });
 
       // Задаем высоту тела для активного аккордеона
