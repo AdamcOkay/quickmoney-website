@@ -1,0 +1,225 @@
+.formpage {
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: url("/assets/bg/blur.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: -200px 100px;
+  }
+
+  @media (min-width: $bp-md) {
+    &::before {
+      top: 80px;
+      left: -100px;
+      width: 1080px;
+      height: 990px;
+      background-image: url("/assets/bg/blur-web.png");
+      background-position: 0 0;
+    }
+  }
+
+  .title-wrapper {
+    padding-top: 10px;
+    padding-bottom: 5px;
+    color: #fff;
+  }
+
+  h1 {
+    margin-bottom: 15px;
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  .sub-title {
+    margin-bottom: 15px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  .content-wrapper {
+    border-radius: 10px;
+  }
+
+  .input-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .input-wrapper,
+  .input-col {
+    position: relative;
+  }
+
+  .input-label {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    transition: all 0.2s;
+  }
+
+  input {
+    display: block;
+    width: 100%;
+    padding: 17px 20px 17px 20px;
+    border: none;
+    outline: none;
+    background: $input-grey;
+    font-size: 15px;
+    line-height: 16px;
+    transition: all 0.2s;
+
+    &:focus,
+    &:valid {
+      padding-top: 24px;
+      padding-bottom: 10px;
+    }
+  }
+
+  input:focus + .input-label,
+  input:valid + .input-label {
+    top: 7px;
+    transform: none;
+    font-size: 10px;
+    line-height: 12px;
+  }
+
+  .forgot {
+    display: block;
+    width: fit-content;
+    margin: 25px 0 0 auto;
+    font-size: 15px;
+    line-height: 16px;
+    color: #000;
+  }
+
+  .button {
+    width: 100%;
+    margin-top: 5px;
+  }
+
+  .button--white {
+    position: relative;
+    max-width: 290px;
+    background: rgba(#fff, 0.9);
+    margin: 30px auto 0;
+    z-index: 2;
+  }
+
+  .new-password-form {
+    display: none;
+  }
+
+  .checkbox-container {
+    display: block;
+    position: relative;
+    padding: 4px 5px 4px 35px;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 22px;
+    user-select: none;
+
+    a {
+      color: #000;
+      text-decoration: underline;
+    }
+  }
+
+  .checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  .checkmark {
+    position: absolute;
+    top: 6px;
+    left: 5px;
+    height: 20px;
+    width: 20px;
+    border: 2px solid #dadada;
+    border-radius: 3px;
+  }
+
+  .checkbox-container input:checked ~ .checkmark {
+    background: $green-gradient;
+    border: none;
+  }
+
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  .checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+  }
+
+  .checkbox-container .checkmark:after {
+    top: 2px;
+    left: 6px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+  }
+
+  @media (min-width: $bp-lg) {
+    .title-wrapper {
+      padding-left: 75px;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      font-size: 35px;
+      line-height: 45px;
+    }
+
+    .sub-title {
+      margin-bottom: 25px;
+      font-size: 18px;
+      line-height: 26px;
+    }
+
+    .input-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .button-col {
+      grid-column-start: 3;
+    }
+    .forgot {
+      margin: 0 0 0 auto;
+      padding-top: 10px;
+    }
+
+    .button {
+      margin: 0;
+      padding: 17px 30px 17px 30px;
+      font-size: 18px;
+      line-height: 16px;
+    }
+
+    .button--white {
+      margin: 30px auto 0;
+    }
+  }
+}

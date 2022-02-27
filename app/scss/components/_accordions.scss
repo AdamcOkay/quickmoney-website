@@ -1,0 +1,106 @@
+.accordion {
+  position: relative;
+  margin-bottom: 10px;
+  padding: 0;
+  border: 1px solid $input-grey;
+  border-radius: 15px;
+
+  &__title {
+    padding: 15px 45px 15px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22px;
+    transition: color 0.3s;
+
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      cursor: pointer;
+      transition: transform 0.3s linear, opacity 0.3s linear;
+    }
+
+    &::before {
+      background: url("/assets/icons/contentIcons/plus.svg") no-repeat;
+    }
+
+    &::after {
+      opacity: 0;
+      background: url("/assets/icons/contentIcons/plus-active.svg") no-repeat;
+    }
+  }
+
+  &__body {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 15px;
+    transition: all 0.3s linear;
+
+    * {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    p,
+    ol,
+    ul {
+      padding-bottom: 10px;
+    }
+
+    ul,
+    ol {
+      margin: 0;
+    }
+
+    a {
+      color: $primary-pink;
+    }
+  }
+
+  @media (min-width: $bp-tab) {
+    &__title {
+      padding: 20px 45px 20px 20px;
+      font-size: 20px;
+      line-height: 30px;
+
+      &::before,
+      &::after {
+        top: 25px;
+      }
+    }
+
+    &__body {
+      padding: 0 20px;
+
+      * {
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+.accordion--active {
+  .accordion__title {
+    color: $primary-pink;
+
+    &::before {
+      opacity: 0;
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      opacity: 1;
+      transform: rotate(45deg);
+    }
+  }
+
+  .accordion__body {
+    padding-bottom: 10px;
+  }
+}

@@ -1,0 +1,121 @@
+.contentpage {
+  .branch-tabs {
+    display: flex;
+    margin: 0 -15px 15px;
+    padding: 0 15px;
+    list-style: none;
+    overflow-x: auto;
+
+    @media (min-width: $bp-lg) {
+      margin-bottom: 40px;
+    }
+  }
+
+  .branch-tabs__item {
+    &:not(:last-of-type) {
+      margin-right: 10px;
+    }
+
+    a {
+      display: block;
+      width: max-content;
+      padding: 17px 20px;
+      border: 1px solid #dfe8ee;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 15px;
+      line-height: 16px;
+      color: #000;
+    }
+
+    &--active a {
+      padding: 18px 20px;
+      background: $green-gradient;
+      border: none;
+    }
+
+    @media (min-width: $bp-lg) {
+      &:not(:last-of-type) {
+        margin-right: 20px;
+      }
+
+      a {
+        font-size: 18px;
+        line-height: 25px;
+      }
+    }
+  }
+
+  .branch-content {
+    display: none;
+
+    &--active {
+      display: block;
+    }
+
+    .map-box {
+      display: none;
+    }
+
+    @media (min-width: $bp-lg) {
+      &--active {
+        display: grid;
+        grid-template-columns: 400px 1fr;
+        gap: 50px;
+      }
+
+      .accordion {
+        margin-bottom: 15px;
+        border: none;
+        border-radius: 0;
+        border-bottom: 1px solid #edf1f4;
+
+        &__title {
+          padding: 0 0 10px 0;
+        }
+
+        &__body {
+          padding: 0 15px 15px 15px;
+        }
+
+        &__title::after,
+        &__title::before {
+          display: none;
+        }
+
+        .map-frame {
+          display: none;
+        }
+      }
+
+      .map-box {
+        display: block;
+        height: 470px;
+        background: $light-grey;
+        border-radius: 10px;
+        overflow: hidden;
+
+        iframe {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  .branch-phone {
+    font-weight: 700;
+    color: #000;
+  }
+
+  .map-frame {
+    padding: 10px 0;
+
+    iframe {
+      width: 100%;
+      min-height: 240px;
+      height: auto;
+      border-radius: 10px;
+    }
+  }
+}

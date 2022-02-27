@@ -56,7 +56,7 @@
         display: block;
         width: 958px;
         height: 887px;
-        background: url("/assets/bg/blur.png");
+        background: url("/assets/bg/blur.png") no-repeat;
         z-index: -1;
       }
     }
@@ -65,10 +65,12 @@
       padding-top: 110px;
       margin-top: -80px;
     }
+
     @media (min-width: $bp-md) {
       .container {
         display: grid;
         grid-template-areas: "visual info";
+        grid-template-columns: 1fr 1fr;
         gap: 80px;
 
         &::before {
@@ -76,8 +78,14 @@
           left: -200px;
           width: 1242px;
           height: 1141px;
-          background: url("/assets/bg/blur-web.png");
+          background: url("/assets/bg/blur-web.png") no-repeat;
         }
+      }
+    }
+
+    @media (min-width: $bp-lg) {
+      .container {
+        grid-template-columns: 600px 1fr;
       }
     }
   }
@@ -365,11 +373,12 @@
   footer {
     @media (min-width: $bp-md) {
       &::before {
+        display: block;
         top: -450px;
         left: 0;
         width: 1560px;
         height: 1413px;
-        background: url("/assets/bg/blur-footer.png");
+        background: url("/assets/bg/blur-footer.png") no-repeat;
         transform: none;
       }
     }

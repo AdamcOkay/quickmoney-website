@@ -7,8 +7,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
     max-width: 48px;
     line-height: 100%;
+    z-index: 4;
 
     @media (min-width: $bp-tab) {
       max-width: 80px;
@@ -64,17 +66,23 @@
   }
 
   .hamburger {
-    display: block;
-    position: relative;
+    display: flex;
+    align-items: center;
     width: 25px;
     height: 30px;
     padding: 0;
+    z-index: 4;
+
+    &__box {
+      position: relative;
+      width: 100%;
+      height: 14px;
+    }
 
     &__inner {
       position: absolute;
-      top: 50%;
+      top: 0;
       right: 0;
-      transform: translateY(-50%);
       width: calc(100% - 5px);
       height: 2px;
       background: #fff;
@@ -91,11 +99,31 @@
       }
 
       &::before {
-        top: -6px;
+        top: 6px;
       }
 
       &::after {
-        bottom: -6px;
+        bottom: -12px;
+      }
+    }
+
+    &__inner,
+    &__inner::before,
+    &__inner::after {
+      transition: transform 0.3s, opacity 0.1s;
+    }
+
+    &--active {
+      .hamburger__inner {
+        transform: translate3d(0, 6px, 0) rotate(45deg);
+
+        &::before {
+          opacity: 0;
+        }
+
+        &::after {
+          transform: translate3d(0, -12px, 0) rotate(-90deg);
+        }
       }
     }
   }
@@ -151,6 +179,7 @@
 
     .phone {
       padding-left: 10px;
+      font-size: 14px;
 
       .icon {
         width: 18px;
@@ -170,10 +199,17 @@
         width: 18px;
         height: 18px;
         margin-right: 10px;
+
         path {
           stroke: #000;
           stroke-width: 1.62;
         }
+      }
+
+      .text {
+        text-transform: uppercase;
+        font-size: 12px;
+        line-height: 15px;
       }
     }
 

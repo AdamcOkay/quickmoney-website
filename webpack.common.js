@@ -1,7 +1,20 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-const pages = ["index", "get", "return"];
+const pages = [
+  "index",
+  "get",
+  "return",
+  "faq",
+  "licenses",
+  "legal",
+  "about",
+  "branches",
+  "login",
+  "signin",
+  "pwd",
+];
+
 module.exports = {
   entry: "./app/js/main.js",
   output: {

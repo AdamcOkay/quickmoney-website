@@ -1,4 +1,18 @@
 .contentpage {
+  @media (min-width: $bp-md) {
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      top: 80px;
+      left: -100px;
+      width: 1080px;
+      height: 990px;
+      background: url("/assets/bg/blur-web.png") no-repeat;
+      background-size: contain;
+    }
+  }
+
   .content-wrapper {
     padding-top: 30px;
     padding-bottom: 75px;
@@ -7,6 +21,7 @@
   h1 {
     margin-bottom: 25px;
     font-size: 23px;
+    font-weight: 800;
     line-height: 30px;
 
     @media (min-width: $bp-tab) {
@@ -14,6 +29,24 @@
       font-size: 35px;
       line-height: 45px;
     }
+  }
+
+  .page-sub-title {
+    margin-bottom: 25px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 27px;
+
+    @media (min-width: $bp-tab) {
+      margin-bottom: 30px;
+      font-size: 30px;
+      line-height: 40px;
+    }
+  }
+
+  main {
+    position: relative;
+    margin-top: 10px;
   }
 
   .button {
