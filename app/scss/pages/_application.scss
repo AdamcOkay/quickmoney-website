@@ -2,10 +2,26 @@
   .content-wrapper {
     padding-top: 15px;
     border-radius: 10px 10px 0px 0px;
+
+    @media (min-width: $bp-lg) {
+      padding: 40px 0 60px;
+      border-radius: 10px;
+    }
   }
 
   .step-header {
     margin-bottom: 10px;
+
+    @media (min-width: $bp-lg) {
+      margin-bottom: 40px;
+      padding: 0 55px;
+    }
+  }
+
+  .step-list {
+    @media (min-width: $bp-lg) {
+      padding: 0 75px;
+    }
   }
 
   .probability,
@@ -22,16 +38,28 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     line-height: 16px;
+
+    @media (min-width: $bp-lg) {
+      line-height: 20px;
+    }
   }
 
   .probability-title {
     font-size: 12px;
     font-weight: 500;
+
+    @media (min-width: $bp-lg) {
+      font-size: 16px;
+    }
   }
 
   .probability-percent {
     font-size: 16px;
     font-weight: 800;
+
+    @media (min-width: $bp-lg) {
+      font-size: 20px;
+    }
   }
 
   .step-pagination {
@@ -61,11 +89,20 @@
     font-weight: 500;
     line-height: 16px;
     color: #b5b5b5;
+
+    @media (min-width: $bp-lg) {
+      font-size: 16px;
+      line-height: 20px;
+    }
   }
 
   .form-title-wrapper {
     display: flex;
     margin-bottom: 15px;
+
+    @media (min-width: $bp-lg) {
+      margin-bottom: 25px;
+    }
   }
 
   .form-title {
@@ -75,6 +112,11 @@
   h2.form-title {
     font-size: 18px;
     line-height: 20px;
+
+    @media (min-width: $bp-lg) {
+      font-size: 23px;
+      line-height: 27px;
+    }
   }
 
   h3.form-title {
@@ -83,9 +125,43 @@
     padding-left: 20px;
     font-size: 15px;
     line-height: 16px;
+
+    @media (min-width: $bp-lg) {
+      font-size: 20px;
+      line-height: 30px;
+    }
+  }
+
+  .form-subtitle {
+    margin-bottom: 15px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+
+    @media (min-width: $bp-lg) {
+      margin-bottom: 25px;
+      font-size: 18px;
+      line-height: 22px;
+    }
+  }
+
+  .contact-title {
+    padding-top: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+
+    @media (min-width: $bp-lg) {
+      margin-bottom: -15px;
+      grid-column: 1 / span 3;
+      font-size: 20px;
+      line-height: 30px;
+    }
   }
 
   .percent-badge {
+    display: flex;
+    align-items: center;
     margin-left: 10px;
     padding: 5px;
     background: $green-gradient;
@@ -94,11 +170,27 @@
     font-weight: 700;
     line-height: 12px;
     color: #fff;
+
+    @media (min-width: $bp-lg) {
+      padding: 5px 10px;
+      font-size: 13px;
+      line-height: 15px;
+    }
   }
 
   .input-row {
     padding-bottom: 10px;
     margin-bottom: 20px;
+
+    @media (min-width: $bp-lg) {
+      margin-bottom: 30px;
+    }
+  }
+
+  .radio-col {
+    @media (min-width: $bp-lg) {
+      grid-column: 1 / span 3;
+    }
   }
 
   .radio-wrapper {
@@ -110,7 +202,84 @@
     margin-right: 30px;
   }
 
+  .buttons-row {
+    @media (min-width: $bp-lg) {
+      grid-template-columns: 368px 1fr 330px;
+      padding-top: 25px;
+      justify-content: space-between;
+      align-items: center;
+
+      .back-col {
+        grid-column-start: 2;
+        grid-row-start: 1;
+      }
+      .next-col {
+        grid-column-start: 3;
+        grid-row-start: 1;
+      }
+    }
+  }
+
   .button {
     margin-top: 0;
+  }
+
+  .back-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px auto 0;
+    padding-top: 5px;
+    width: max-content;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    line-height: 12px;
+
+    .icon {
+      margin-right: 10px;
+    }
+
+    @media (min-width: $bp-lg) {
+      margin: 0 0 0 auto;
+      font-size: 16px;
+      line-height: 18px;
+    }
+  }
+
+  .button-add {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 15px 20px;
+    border: 1px solid $primary-yellow;
+    border-radius: 10px;
+    color: #000;
+
+    .text {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 14px;
+    }
+
+    &:active {
+      background: $primary-yellow;
+    }
+
+    @media (min-width: $bp-lg) {
+      padding: 15px 15px 15px 20px;
+
+      .text {
+        font-size: 18px;
+        line-height: 20px;
+      }
+
+      .percent-badge {
+        padding: 5px;
+        font-size: 12px;
+        line-height: 12px;
+      }
+    }
   }
 }

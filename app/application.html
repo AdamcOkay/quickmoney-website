@@ -129,8 +129,8 @@
           Чем подробнее заполнена заявка, тем выше шанс одобрения займа.
         </p>
       </div>
-      <div class="container content-wrapper">
-        <form action="">
+      <form action="">
+        <div class="container content-wrapper">
           <div class="step-header">
             <div class="probability">
               <p class="probability-title">Вероятность одобрения</p>
@@ -210,61 +210,60 @@
                       name="id-exp-date"
                       required
                     />
-                    <label class="input-label" for="exp-date"
+                    <label class="input-label" for="id-exp-date"
                       >Дата истечения</label
                     >
                   </div>
                 </div>
-                  <div class="input-col">
-                    <h3 class="form-title">Кем выдано</h3>
-                    <div class="input-wrapper radio-wrapper">
-                      <label class="radio-container click-container"
-                        >МВД РК
-                        <input type="radio" checked="checked" name="givenby" />
-                        <span class="checkmark"></span>
-                      </label>
-                      <label class="radio-container click-container"
-                        >МВД РК
-                        <input type="radio" name="givenby" />
-                        <span class="checkmark"></span>
-                      </label>
-                    </div>
+                <div class="input-col radio-col">
+                  <h3 class="form-title">Кем выдано</h3>
+                  <div class="input-wrapper radio-wrapper">
+                    <label class="radio-container click-container"
+                      >МВД РК
+                      <input type="radio" checked="checked" name="givenby" />
+                      <span class="checkmark"></span>
+                    </label>
+                    <label class="radio-container click-container"
+                      >МВД РК
+                      <input type="radio" name="givenby" />
+                      <span class="checkmark"></span>
+                    </label>
                   </div>
                 </div>
               </div>
-              <div class="input-row buttons-row">
-                <div class="input-col">
-                  <button
-                    type="button"
-                    class="button-reset button js-step-button"
-                    disabled
-                  >
-                    далее
-                  </button>
-                </div>
-                <div class="input-col">
-                  <button class="button-reset back-button">
-                    <span class="icon">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="6"
-                        height="10"
-                        viewBox="0 0 6 10"
-                        fill="none"
-                      >
-                        <path
-                          d="M4.99995 -4.37138e-08L5.99993 1L0.999989 6.00001L-2.18557e-07 5.00001L4.99995 -4.37138e-08Z"
-                          fill="black"
-                        />
-                        <path
-                          d="M6 9L5.00001 10L-2.18557e-07 5.00001L1.00005 3.99999L6 9Z"
-                          fill="black"
-                        />
-                      </svg>
-                    </span>
-                    <span class="text"> Вернуться назад </span>
-                  </button>
-                </div>
+            </div>
+            <div class="input-row buttons-row">
+              <div class="input-col next-col">
+                <button
+                  type="button"
+                  class="button-reset button js-step-button"
+                  disabled
+                >
+                  далее
+                </button>
+              </div>
+              <div class="input-col back-col">
+                <button type="button" class="button-reset back-button">
+                  <span class="icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="6"
+                      height="10"
+                      viewBox="0 0 6 10"
+                      fill="none"
+                    >
+                      <path
+                        d="M4.99995 -4.37138e-08L5.99993 1L0.999989 6.00001L-2.18557e-07 5.00001L4.99995 -4.37138e-08Z"
+                        fill="black"
+                      />
+                      <path
+                        d="M6 9L5.00001 10L-2.18557e-07 5.00001L1.00005 3.99999L6 9Z"
+                        fill="black"
+                      />
+                    </svg>
+                  </span>
+                  <span class="text"> Вернуться назад </span>
+                </button>
               </div>
             </div>
             <div class="step-list__item js-step">
@@ -322,7 +321,7 @@
                 </div>
               </div>
               <div class="input-row buttons-row">
-                <div class="input-col">
+                <div class="input-col next-col">
                   <button
                     type="button"
                     class="button-reset button js-step-button"
@@ -331,8 +330,8 @@
                     далее
                   </button>
                 </div>
-                <div class="input-col">
-                  <button class="button-reset back-button">
+                <div class="input-col back-col">
+                  <button type="button" class="button-reset back-button">
                     <span class="icon">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -409,7 +408,7 @@
                 займам?
               </h3>
               <div class="input-row">
-                <div class="input-col">
+                <div class="input-col radio-col">
                   <div class="input-wrapper radio-wrapper">
                     <label class="radio-container click-container"
                       >Нет
@@ -425,7 +424,7 @@
                 </div>
               </div>
               <div class="input-row buttons-row">
-                <div class="input-col">
+                <div class="input-col next-col">
                   <button
                     type="button"
                     class="button-reset button js-step-button"
@@ -434,8 +433,8 @@
                     далее
                   </button>
                 </div>
-                <div class="input-col">
-                  <button class="button-reset back-button">
+                <div class="input-col back-col">
+                  <button type="button" class="button-reset back-button">
                     <span class="icon">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -560,8 +559,7 @@
                 <div class="input-col">
                   <button
                     type="button"
-                    class="button-reset button js-add-button"
-                    disabled
+                    class="button-reset button-add js-add-button"
                   >
                     <span class="text">Добавить еще один контакт</span>
                     <span class="percent-badge">+5%</span>
@@ -569,7 +567,7 @@
                 </div>
               </div>
               <div class="input-row buttons-row">
-                <div class="input-col">
+                <div class="input-col next-col">
                   <button
                     type="button"
                     class="button-reset button js-step-button"
@@ -578,7 +576,7 @@
                     далее
                   </button>
                 </div>
-                <div class="input-col">
+                <div class="input-col back-col">
                   <button class="button-reset back-button">
                     <span class="icon">
                       <svg
@@ -604,8 +602,30 @@
               </div>
             </div>
           </div>
-        </form>
-      </div>
+        </div>
+
+        <div class="container">
+          <div class="title-wrapper">
+            <h2 class="sum-title">Сумма</h2>
+            <p class="sub-title">
+              Чем подробнее заполнена заявка, тем выше шанс одобрения займа.
+            </p>
+          </div>
+          <div class="sum-wrapper content-wrapper">
+            <div class="sum-header">
+              <p class="sum-text">Сумма:</p>
+              <p class="sum">2 000 ₸</p>
+            </div>
+
+            <div id="slider-non-linear-step">
+              <div class="slider-marker"></div>
+              <div class="slider-marker"></div>
+              <div class="slider-marker"></div>
+              <div class="slider-marker"></div>
+            </div>
+          </div>
+        </div>
+      </form>
     </main>
     <!-- MAIN END -->
   </body>

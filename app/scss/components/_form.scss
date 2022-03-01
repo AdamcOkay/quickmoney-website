@@ -7,6 +7,7 @@ input {
   background: $input-grey;
   border-radius: 5px;
   font-size: 15px;
+  font-weight: 500;
   line-height: 16px;
   transition: all 0.2s;
 
@@ -14,6 +15,27 @@ input {
   &:valid {
     padding-top: 24px;
     padding-bottom: 10px;
+  }
+
+  @media (min-width: $bp-lg) {
+    padding-bottom: 18px;
+    font-size: 18px;
+    line-height: 20px;
+
+    &:focus,
+    &:valid {
+      padding-bottom: 11px;
+    }
+  }
+}
+
+.input-label {
+  font-size: 15px;
+  line-height: 16px;
+
+  @media (min-width: $bp-lg) {
+    font-size: 18px;
+    line-height: 20px;
   }
 }
 
@@ -23,6 +45,12 @@ input:valid + .input-label {
   transform: none;
   font-size: 10px;
   line-height: 12px;
+
+  @media (min-width: $bp-lg) {
+    top: 6px;
+    font-size: 14px;
+    line-height: 15px;
+  }
 }
 
 .click-container {
@@ -89,6 +117,11 @@ input:valid + .input-label {
   font-size: 15px;
   font-weight: 500;
   line-height: 16px;
+
+  @media (min-width: $bp-lg) {
+    font-size: 18px;
+    line-height: 20px;
+  }
 }
 
 .radio-container input {
@@ -173,6 +206,11 @@ input:valid + .input-label {
   user-select: none;
   font-size: 15px;
   line-height: 16px;
+
+  @media (min-width: $bp-lg) {
+    font-size: 18px;
+    line-height: 20px;
+  }
 }
 
 .select-items {
