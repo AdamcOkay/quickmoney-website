@@ -134,18 +134,24 @@
           <div class="input-row">
             <div class="input-col">
               <div class="input-wrapper">
-                <input type="text" id="iin" name="iin" required />
-                <label class="input-label" for="iin">ИИН</label>
+                <input type="text" id="doc-id" name="doc-id" required />
+                <label class="input-label" for="doc-id">ИИН</label>
               </div>
             </div>
             <div class="input-col">
               <div class="input-wrapper">
-                <input type="tel" id="phone" name="phone" required />
+                <input
+                  type="tel"
+                  id="phone"
+                  class="phone-input"
+                  name="phone"
+                  required
+                />
                 <label class="input-label" for="phone">Мобильный телефон</label>
               </div>
             </div>
             <div class="input-col">
-              <label class="checkbox-container"
+              <label class="checkbox-container click-container"
                 >Ознакомлен(на) с условиями <a href="#">публичной оферты</a>,
                 также даю свое согласие на сбор персональных данных.
                 <input type="checkbox" required />

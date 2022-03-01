@@ -13,6 +13,7 @@ const pages = [
   "login",
   "signin",
   "pwd",
+  "application",
 ];
 
 module.exports = {
@@ -31,6 +32,7 @@ module.exports = {
         })
     )
   ),
+
   module: {
     rules: [
       {

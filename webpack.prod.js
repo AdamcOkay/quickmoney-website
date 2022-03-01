@@ -53,7 +53,7 @@ module.exports = merge(common, {
             plugins: [
               ["gifsicle", { interlaced: true }],
               ["jpegtran", { progressive: true }],
-              ["optipng", { optimizationLevel: 5 }],
+              ["optipng", { optimizationLevel: 0 }],
             ],
           },
         },

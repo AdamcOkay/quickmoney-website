@@ -25,8 +25,8 @@
   // модальные окна
   "components/sliders",
   // бегунки
-  "components/dropdowns"; // выпадающие списки
+  "components/form"; // выпадающие списки
 
 // 6. Стили для страниц
-@import "pages/content", "pages/contacts", "pages/application", "pages/formpage",
+@import "pages/content", "pages/contacts", "pages/formpage", "pages/application",
   "pages/signin", "pages/profile", "pages/home";
