@@ -30,4 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
   for (var i = 0; i < pips.length; i++) {
     pips[i].addEventListener("click", clickOnPip);
   }
+  pips[0].classList.add("first-pip");
+  pips[pips.length - 1].classList.add("last-pip");
 });

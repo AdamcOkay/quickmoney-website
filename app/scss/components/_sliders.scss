@@ -1,29 +1,45 @@
 .noUi-target {
+  position: relative;
   border: none;
   box-shadow: none;
   height: 20px;
   background: none;
-}
 
-.noUi-base,
-.noUi-horizontal .noUi-origin {
-  &::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    display: block;
-    height: 2px;
-    width: 100%;
-    border-radius: 2px;
+  * {
+    -webkit-tap-highlight-color: transparent; /* for removing the highlight */
   }
 }
 
 .noUi-base {
   .noUi-connects {
-    border-radius: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 2px;
+    border-radius: 2px;
+    background: #eee;
+    cursor: pointer;
+
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      width: 2px;
+      height: 2px;
+      position: absolute;
+      top: 0;
+      background: #c4c4c4;
+      z-index: 2;
+    }
+
+    &::before {
+      left: 25%;
+    }
+
+    &::after {
+      left: 75%;
+    }
   }
+
   .noUi-connect {
     height: 2px;
     border-radius: 100px;
@@ -32,17 +48,57 @@
 }
 
 .noUi-horizontal {
+  .noUi-origin {
+    height: 20px;
+    cursor: pointer;
+  }
+
   .noUi-handle {
     width: 20px;
     height: 20px;
+    top: 50%;
+    right: -10px;
+    transform: translateY(-50%);
     border-radius: 50%;
     background: $primary-yellow;
     border: none;
     box-shadow: none;
+    cursor: pointer;
 
     &::before,
     &::after {
       display: none;
+    }
+  }
+
+  .noUi-pips-horizontal {
+    position: absolute;
+    top: 20px;
+    padding: 0;
+    height: 15px;
+
+    .noUi-marker {
+      display: none;
+    }
+
+    .noUi-value {
+      top: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 10px;
+      font-weight: 600;
+      line-height: 15px;
+      color: #c9c9c9;
+      cursor: pointer;
+    }
+
+    .first-pip {
+      top: 0;
+      transform: none;
+    }
+
+    .last-pip {
+      top: 0;
+      transform: translateX(-100%);
     }
   }
 }
