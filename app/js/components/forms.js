@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   forms.forEach((form) => {
     const formInputs = [...form.querySelectorAll("input")],
-      submitButton = form.querySelector(`.js-submit-button`);
+      submitButton = form.querySelector(`button[type="submit"]`);
 
     formInputs.forEach((input) => {
       input.addEventListener("input", () => {

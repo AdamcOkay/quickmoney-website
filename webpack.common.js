@@ -40,6 +40,13 @@ module.exports = {
         use: ["html-loader"],
       },
       {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+        },
+      },
+      {
         test: /\.(svg|png|jpg|jpeg|webp|gif)$/,
         type: "asset/resource",
       },

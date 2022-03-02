@@ -123,501 +123,577 @@
 
     <!-- MAIN START -->
     <main>
-      <div class="container title-wrapper">
-        <h1>Заявка</h1>
-        <p class="sub-title">
-          Чем подробнее заполнена заявка, тем выше шанс одобрения займа.
-        </p>
-      </div>
-      <form action="">
-        <div class="container content-wrapper">
-          <div class="step-header">
-            <div class="probability">
-              <p class="probability-title">Вероятность одобрения</p>
-              <p class="probability-percent">0%</p>
-            </div>
-            <div class="step-pagination">
-              <div
-                class="step-pagination__item step-pagination__item--passed"
-              ></div>
-              <div
-                class="step-pagination__item step-pagination__item--active"
-              ></div>
-              <div class="step-pagination__item"></div>
-              <div class="step-pagination__item"></div>
-            </div>
-            <p class="step-counter">Шаг <span class="count">1</span> из 4</p>
+      <form class="js-step-form">
+        <div class="info-container">
+          <div class="container title-wrapper">
+            <h1>Заявка</h1>
+            <p class="sub-title">
+              Чем подробнее заполнена заявка, тем выше шанс одобрения займа.
+            </p>
           </div>
-          <div class="step-list">
-            <div class="step-list__item js-step">
-              <div class="form-title-wrapper">
-                <h2 class="form-title">Личные данные</h2>
-                <p class="percent-badge">+10%</p>
+          <div class="container content-wrapper">
+            <div class="step-header">
+              <div class="probability">
+                <p class="probability-title">Вероятность одобрения</p>
+                <p class="probability-percent js-probability-count">0%</p>
               </div>
-              <div class="input-row">
-                <div class="input-col">
-                  <div class="input-wrapper">
-                    <input
-                      type="text"
-                      id="first-name"
-                      name="first-name"
-                      required
-                    />
-                    <label class="input-label" for="first-name">Имя</label>
-                  </div>
-                </div>
-                <div class="input-col">
-                  <div class="input-wrapper">
-                    <input
-                      type="text"
-                      id="last-name"
-                      name="last-name"
-                      required
-                    />
-                    <label class="input-label" for="last-name">Фамилия</label>
-                  </div>
-                </div>
-                <div class="input-col">
-                  <div class="input-wrapper">
-                    <div class="custom-select">
-                      <select name="count" id="count">
-                        <option value="0">Количество иждивенцев</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
+              <div class="step-pagination">
+                <div
+                  class="step-pagination__item step-pagination__item--active js-step-pagination"
+                ></div>
+                <div class="step-pagination__item js-step-pagination"></div>
+                <div class="step-pagination__item js-step-pagination"></div>
+                <div class="step-pagination__item js-step-pagination"></div>
               </div>
-              <div class="form-title-wrapper">
-                <h2 class="form-title">Удостоверение личности</h2>
-                <p class="percent-badge">+10%</p>
-              </div>
-              <div class="input-row">
-                <div class="input-col">
-                  <div class="input-wrapper">
-                    <input type="text" id="id-num" name="id-num" required />
-                    <label class="input-label" for="id-num">Номер</label>
-                  </div>
-                </div>
-                <div class="input-col">
-                  <div class="input-wrapper">
-                    <input
-                      type="text"
-                      id="id-exp-date"
-                      name="id-exp-date"
-                      required
-                    />
-                    <label class="input-label" for="id-exp-date"
-                      >Дата истечения</label
-                    >
-                  </div>
-                </div>
-                <div class="input-col radio-col">
-                  <h3 class="form-title">Кем выдано</h3>
-                  <div class="input-wrapper radio-wrapper">
-                    <label class="radio-container click-container"
-                      >МВД РК
-                      <input type="radio" checked="checked" name="givenby" />
-                      <span class="checkmark"></span>
-                    </label>
-                    <label class="radio-container click-container"
-                      >МВД РК
-                      <input type="radio" name="givenby" />
-                      <span class="checkmark"></span>
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="input-row buttons-row">
-              <div class="input-col next-col">
-                <button
-                  type="button"
-                  class="button-reset button js-step-button"
-                  disabled
-                >
-                  далее
-                </button>
-              </div>
-              <div class="input-col back-col">
-                <button type="button" class="button-reset back-button">
-                  <span class="icon">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="6"
-                      height="10"
-                      viewBox="0 0 6 10"
-                      fill="none"
-                    >
-                      <path
-                        d="M4.99995 -4.37138e-08L5.99993 1L0.999989 6.00001L-2.18557e-07 5.00001L4.99995 -4.37138e-08Z"
-                        fill="black"
-                      />
-                      <path
-                        d="M6 9L5.00001 10L-2.18557e-07 5.00001L1.00005 3.99999L6 9Z"
-                        fill="black"
-                      />
-                    </svg>
-                  </span>
-                  <span class="text"> Вернуться назад </span>
-                </button>
-              </div>
-            </div>
-            <div class="step-list__item js-step">
-              <div class="form-title-wrapper">
-                <h2 class="form-title">Адрес регистрации</h2>
-                <p class="percent-badge">+20%</p>
-              </div>
-              <div class="input-row">
-                <div class="input-col">
-                  <div class="input-wrapper">
-                    <div class="custom-select">
-                      <select name="region" id="region">
-                        <option value="0">Регион</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-                <div class="input-col">
-                  <div class="input-wrapper">
-                    <input type="text" id="city" name="city" required />
-                    <label class="input-label" for="city"
-                      >Город / Населенный пункт</label
-                    >
-                  </div>
-                </div>
-                <div class="input-col">
-                  <div class="input-wrapper">
-                    <input type="text" id="street" name="street" required />
-                    <label class="input-label" for="street"
-                      >Микрорайон / Улица</label
-                    >
-                  </div>
-                </div>
-                <div class="input-col">
-                  <div class="input-wrapper">
-                    <input type="text" id="house" name="house" required />
-                    <label class="input-label" for="house">Дом</label>
-                  </div>
-                </div>
-                <div class="input-col">
-                  <div class="input-wrapper">
-                    <input
-                      type="text"
-                      id="apartment"
-                      name="apartment"
-                      required
-                    />
-                    <label class="input-label" for="apartment">Квартира</label>
-                  </div>
-                </div>
-              </div>
-              <div class="input-row buttons-row">
-                <div class="input-col next-col">
-                  <button
-                    type="button"
-                    class="button-reset button js-step-button"
-                    disabled
-                  >
-                    далее
-                  </button>
-                </div>
-                <div class="input-col back-col">
-                  <button type="button" class="button-reset back-button">
-                    <span class="icon">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="6"
-                        height="10"
-                        viewBox="0 0 6 10"
-                        fill="none"
-                      >
-                        <path
-                          d="M4.99995 -4.37138e-08L5.99993 1L0.999989 6.00001L-2.18557e-07 5.00001L4.99995 -4.37138e-08Z"
-                          fill="black"
-                        />
-                        <path
-                          d="M6 9L5.00001 10L-2.18557e-07 5.00001L1.00005 3.99999L6 9Z"
-                          fill="black"
-                        />
-                      </svg>
-                    </span>
-                    <span class="text"> Вернуться назад </span>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="step-list__item js-step">
-              <div class="form-title-wrapper">
-                <h2 class="form-title">Работа</h2>
-                <p class="percent-badge">+20%</p>
-              </div>
-              <div class="input-row">
-                <div class="input-col">
-                  <div class="input-wrapper">
-                    <input type="text" id="company" name="company" required />
-                    <label class="input-label" for="company">Организация</label>
-                  </div>
-                </div>
-                <div class="input-col">
-                  <div class="input-wrapper">
-                    <input type="text" id="position" name="position" required />
-                    <label class="input-label" for="position">Должность</label>
-                  </div>
-                </div>
-                <div class="input-col">
-                  <div class="input-wrapper">
-                    <div class="custom-select">
-                      <select name="wage" id="wage">
-                        <option value="0">Ежемесячный доход</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-                <div class="input-col">
-                  <div class="input-wrapper">
-                    <div class="custom-select">
-                      <select name="wage-add" id="wage-add">
-                        <option value="0">Дополнительный доход</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <h3 class="form-title">
-                Имеется ли у вас действующая просрочка более 60-и дней по
-                займам?
-              </h3>
-              <div class="input-row">
-                <div class="input-col radio-col">
-                  <div class="input-wrapper radio-wrapper">
-                    <label class="radio-container click-container"
-                      >Нет
-                      <input type="radio" checked="checked" name="days" />
-                      <span class="checkmark"></span>
-                    </label>
-                    <label class="radio-container click-container"
-                      >Да
-                      <input type="radio" name="days" />
-                      <span class="checkmark"></span>
-                    </label>
-                  </div>
-                </div>
-              </div>
-              <div class="input-row buttons-row">
-                <div class="input-col next-col">
-                  <button
-                    type="button"
-                    class="button-reset button js-step-button"
-                    disabled
-                  >
-                    далее
-                  </button>
-                </div>
-                <div class="input-col back-col">
-                  <button type="button" class="button-reset back-button">
-                    <span class="icon">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="6"
-                        height="10"
-                        viewBox="0 0 6 10"
-                        fill="none"
-                      >
-                        <path
-                          d="M4.99995 -4.37138e-08L5.99993 1L0.999989 6.00001L-2.18557e-07 5.00001L4.99995 -4.37138e-08Z"
-                          fill="black"
-                        />
-                        <path
-                          d="M6 9L5.00001 10L-2.18557e-07 5.00001L1.00005 3.99999L6 9Z"
-                          fill="black"
-                        />
-                      </svg>
-                    </span>
-                    <span class="text"> Вернуться назад </span>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="step-list__item js-step">
-              <div class="form-title-wrapper">
-                <h2 class="form-title">Контактные лица</h2>
-                <p class="percent-badge">+20%</p>
-              </div>
-              <p class="form-subtitle">
-                Необходимо указать не менее двух телефонов: коллеги и близкого
-                родственника.
+              <p class="step-counter">
+                Шаг <span class="count js-step-count">1</span> из 4
               </p>
-              <div class="input-row">
-                <h3 class="contact-title">
-                  <span class="contact-count">Первый</span> контакт:
-                </h3>
-                <div class="input-col">
-                  <div class="input-wrapper">
-                    <input
-                      type="text"
-                      id="contact-name-1"
-                      name="contact-name-1"
-                      required
-                    />
-                    <label class="input-label" for="contact-name-1">Имя</label>
-                  </div>
+            </div>
+            <div class="step-list">
+              <div
+                class="step-list__item js-step step-list__item--active"
+                data-step-probability="20"
+                data-step="1"
+                data-last-step="false"
+              >
+                <div class="form-title-wrapper">
+                  <h2 class="form-title">Личные данные</h2>
+                  <p class="percent-badge">+10%</p>
                 </div>
-                <div class="input-col">
-                  <div class="input-wrapper">
-                    <div class="custom-select">
-                      <select name="contact-who-1" id="contact-who-1">
-                        <option value="0">Кем приходится</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                      </select>
+                <div class="input-row">
+                  <div class="input-col">
+                    <div class="input-wrapper">
+                      <input
+                        type="text"
+                        id="first-name"
+                        name="first-name"
+                        required
+                      />
+                      <label class="input-label" for="first-name">Имя</label>
+                    </div>
+                  </div>
+                  <div class="input-col">
+                    <div class="input-wrapper">
+                      <input
+                        type="text"
+                        id="last-name"
+                        name="last-name"
+                        required
+                      />
+                      <label class="input-label" for="last-name">Фамилия</label>
+                    </div>
+                  </div>
+                  <div class="input-col">
+                    <div class="input-wrapper">
+                      <div class="custom-select">
+                        <select name="count" id="count">
+                          <option value="0">Количество иждивенцев</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                        </select>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div class="input-col">
-                  <div class="input-wrapper">
-                    <input
-                      type="tel"
-                      id="contact-phone-1"
-                      name="contact-phone-1"
-                      class="phone-input"
-                      required
-                    />
-                    <label class="input-label" for="contact-phone-1"
-                      >Номер телефона</label
-                    >
-                  </div>
+                <div class="form-title-wrapper">
+                  <h2 class="form-title">Удостоверение личности</h2>
+                  <p class="percent-badge">+10%</p>
                 </div>
-              </div>
-              <div class="input-row">
-                <h3 class="contact-title">
-                  <span class="contact-count">Второй</span> контакт:
-                </h3>
-                <div class="input-col">
-                  <div class="input-wrapper">
-                    <input
-                      type="text"
-                      id="contact-name-2"
-                      name="contact-name-2"
-                      required
-                    />
-                    <label class="input-label" for="contact-name-2">Имя</label>
-                  </div>
-                </div>
-                <div class="input-col">
-                  <div class="input-wrapper">
-                    <div class="custom-select">
-                      <select name="contact-who-2" id="contact-who-2">
-                        <option value="0">Кем приходится</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                      </select>
+                <div class="input-row">
+                  <div class="input-col">
+                    <div class="input-wrapper">
+                      <input type="text" id="id-num" name="id-num" required />
+                      <label class="input-label" for="id-num">Номер</label>
                     </div>
                   </div>
-                </div>
-                <div class="input-col">
-                  <div class="input-wrapper">
-                    <input
-                      type="tel"
-                      id="contact-phone-2"
-                      name="contact-phone-2"
-                      class="phone-input"
-                      required
-                    />
-                    <label class="input-label" for="contact-phone-2"
-                      >Номер телефона</label
-                    >
-                  </div>
-                </div>
-              </div>
-              <div class="input-row buttons-row">
-                <div class="input-col">
-                  <button
-                    type="button"
-                    class="button-reset button-add js-add-button"
-                  >
-                    <span class="text">Добавить еще один контакт</span>
-                    <span class="percent-badge">+5%</span>
-                  </button>
-                </div>
-              </div>
-              <div class="input-row buttons-row">
-                <div class="input-col next-col">
-                  <button
-                    type="button"
-                    class="button-reset button js-step-button"
-                    disabled
-                  >
-                    далее
-                  </button>
-                </div>
-                <div class="input-col back-col">
-                  <button class="button-reset back-button">
-                    <span class="icon">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="6"
-                        height="10"
-                        viewBox="0 0 6 10"
-                        fill="none"
+                  <div class="input-col">
+                    <div class="input-wrapper">
+                      <input
+                        type="text"
+                        id="id-exp-date"
+                        name="id-exp-date"
+                        required
+                      />
+                      <label class="input-label" for="id-exp-date"
+                        >Дата истечения</label
                       >
-                        <path
-                          d="M4.99995 -4.37138e-08L5.99993 1L0.999989 6.00001L-2.18557e-07 5.00001L4.99995 -4.37138e-08Z"
-                          fill="black"
+                    </div>
+                  </div>
+                  <div class="input-col radio-col">
+                    <h3 class="form-title">Кем выдано</h3>
+                    <div class="input-wrapper radio-wrapper">
+                      <label class="radio-container click-container"
+                        >МВД РК
+                        <input type="radio" checked="checked" name="givenby" />
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="radio-container click-container"
+                        >МВД РК
+                        <input type="radio" name="givenby" />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="input-row buttons-row">
+                  <div class="input-col next-col">
+                    <button
+                      type="button"
+                      class="button-reset button js-step-next"
+                      disabled
+                    >
+                      далее
+                    </button>
+                  </div>
+                  <div class="input-col back-col">
+                    <button
+                      type="button"
+                      class="button-reset back-button"
+                      disabled
+                    >
+                      <span class="icon">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="6"
+                          height="10"
+                          viewBox="0 0 6 10"
+                          fill="none"
+                        >
+                          <path
+                            d="M4.99995 -4.37138e-08L5.99993 1L0.999989 6.00001L-2.18557e-07 5.00001L4.99995 -4.37138e-08Z"
+                            fill="black"
+                          />
+                          <path
+                            d="M6 9L5.00001 10L-2.18557e-07 5.00001L1.00005 3.99999L6 9Z"
+                            fill="black"
+                          />
+                        </svg>
+                      </span>
+                      <span class="text"> Вернуться назад </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="step-list__item js-step"
+                data-step-probability="20"
+                data-step="2"
+                data-last-step="false"
+              >
+                <div class="form-title-wrapper">
+                  <h2 class="form-title">Адрес регистрации</h2>
+                  <p class="percent-badge">+20%</p>
+                </div>
+                <div class="input-row">
+                  <div class="input-col">
+                    <div class="input-wrapper">
+                      <div class="custom-select">
+                        <select name="region" id="region">
+                          <option value="0">Регион</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="input-col">
+                    <div class="input-wrapper">
+                      <input type="text" id="city" name="city" required />
+                      <label class="input-label" for="city"
+                        >Город / Населенный пункт</label
+                      >
+                    </div>
+                  </div>
+                  <div class="input-col">
+                    <div class="input-wrapper">
+                      <input type="text" id="street" name="street" required />
+                      <label class="input-label" for="street"
+                        >Микрорайон / Улица</label
+                      >
+                    </div>
+                  </div>
+                  <div class="input-col">
+                    <div class="input-wrapper">
+                      <input type="text" id="house" name="house" required />
+                      <label class="input-label" for="house">Дом</label>
+                    </div>
+                  </div>
+                  <div class="input-col">
+                    <div class="input-wrapper">
+                      <input
+                        type="text"
+                        id="apartment"
+                        name="apartment"
+                        required
+                      />
+                      <label class="input-label" for="apartment"
+                        >Квартира</label
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="input-row buttons-row">
+                  <div class="input-col next-col">
+                    <button
+                      type="button"
+                      class="button-reset button js-step-next"
+                      disabled
+                    >
+                      далее
+                    </button>
+                  </div>
+                  <div class="input-col back-col">
+                    <button
+                      type="button"
+                      class="button-reset back-button js-step-back"
+                    >
+                      <span class="icon">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="6"
+                          height="10"
+                          viewBox="0 0 6 10"
+                          fill="none"
+                        >
+                          <path
+                            d="M4.99995 -4.37138e-08L5.99993 1L0.999989 6.00001L-2.18557e-07 5.00001L4.99995 -4.37138e-08Z"
+                            fill="black"
+                          />
+                          <path
+                            d="M6 9L5.00001 10L-2.18557e-07 5.00001L1.00005 3.99999L6 9Z"
+                            fill="black"
+                          />
+                        </svg>
+                      </span>
+                      <span class="text"> Вернуться назад </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="step-list__item js-step"
+                data-step-probability="40"
+                data-step="3"
+                data-last-step="false"
+              >
+                <div class="form-title-wrapper">
+                  <h2 class="form-title">Работа</h2>
+                  <p class="percent-badge">+20%</p>
+                </div>
+                <div class="input-row">
+                  <div class="input-col">
+                    <div class="input-wrapper">
+                      <input type="text" id="company" name="company" required />
+                      <label class="input-label" for="company"
+                        >Организация</label
+                      >
+                    </div>
+                  </div>
+                  <div class="input-col">
+                    <div class="input-wrapper">
+                      <input
+                        type="text"
+                        id="position"
+                        name="position"
+                        required
+                      />
+                      <label class="input-label" for="position"
+                        >Должность</label
+                      >
+                    </div>
+                  </div>
+                  <div class="input-col">
+                    <div class="input-wrapper">
+                      <div class="custom-select">
+                        <select name="wage" id="wage">
+                          <option value="0">Ежемесячный доход</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="input-col">
+                    <div class="input-wrapper">
+                      <div class="custom-select">
+                        <select name="wage-add" id="wage-add">
+                          <option value="0">Дополнительный доход</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <h3 class="form-title">
+                  Имеется ли у вас действующая просрочка более 60-и дней по
+                  займам?
+                </h3>
+                <div class="input-row">
+                  <div class="input-col radio-col">
+                    <div class="input-wrapper radio-wrapper">
+                      <label class="radio-container click-container"
+                        >Нет
+                        <input type="radio" checked="checked" name="days" />
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="radio-container click-container"
+                        >Да
+                        <input type="radio" name="days" />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="input-row buttons-row">
+                  <div class="input-col next-col">
+                    <button
+                      type="button"
+                      class="button-reset button js-step-next"
+                      disabled
+                    >
+                      далее
+                    </button>
+                  </div>
+                  <div class="input-col back-col">
+                    <button
+                      type="button"
+                      class="button-reset back-button js-step-back"
+                    >
+                      <span class="icon">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="6"
+                          height="10"
+                          viewBox="0 0 6 10"
+                          fill="none"
+                        >
+                          <path
+                            d="M4.99995 -4.37138e-08L5.99993 1L0.999989 6.00001L-2.18557e-07 5.00001L4.99995 -4.37138e-08Z"
+                            fill="black"
+                          />
+                          <path
+                            d="M6 9L5.00001 10L-2.18557e-07 5.00001L1.00005 3.99999L6 9Z"
+                            fill="black"
+                          />
+                        </svg>
+                      </span>
+                      <span class="text"> Вернуться назад </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="step-list__item js-step"
+                data-step="4"
+                data-last-step="true"
+                data-step-probability="60"
+              >
+                <div class="form-title-wrapper">
+                  <h2 class="form-title">Контактные лица</h2>
+                  <p class="percent-badge">+20%</p>
+                </div>
+                <p class="form-subtitle">
+                  Необходимо указать не менее двух телефонов: коллеги и близкого
+                  родственника.
+                </p>
+                <div class="contacts-wrapper">
+                  <div class="input-row">
+                    <h3 class="contact-title">
+                      <span class="contact-count">Первый</span> контакт:
+                    </h3>
+                    <div class="input-col">
+                      <div class="input-wrapper">
+                        <input
+                          type="text"
+                          id="contact-name-1"
+                          name="contact-name-1"
+                          required
                         />
-                        <path
-                          d="M6 9L5.00001 10L-2.18557e-07 5.00001L1.00005 3.99999L6 9Z"
-                          fill="black"
+                        <label class="input-label" for="contact-name-1"
+                          >Имя</label
+                        >
+                      </div>
+                    </div>
+                    <div class="input-col">
+                      <div class="input-wrapper">
+                        <div class="custom-select">
+                          <select name="contact-who-1" id="contact-who-1">
+                            <option value="0">Кем приходится</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="input-col">
+                      <div class="input-wrapper">
+                        <input
+                          type="tel"
+                          id="contact-phone-1"
+                          name="contact-phone-1"
+                          class="phone-input"
+                          required
                         />
-                      </svg>
-                    </span>
-                    <span class="text"> Вернуться назад </span>
-                  </button>
+                        <label class="input-label" for="contact-phone-1"
+                          >Номер телефона</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="input-row">
+                    <h3 class="contact-title">
+                      <span class="contact-count">Второй</span> контакт:
+                    </h3>
+                    <div class="input-col">
+                      <div class="input-wrapper">
+                        <input
+                          type="text"
+                          id="contact-name-2"
+                          name="contact-name-2"
+                          required
+                        />
+                        <label class="input-label" for="contact-name-2"
+                          >Имя</label
+                        >
+                      </div>
+                    </div>
+                    <div class="input-col">
+                      <div class="input-wrapper">
+                        <div class="custom-select">
+                          <select name="contact-who-2" id="contact-who-2">
+                            <option value="0">Кем приходится</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="input-col">
+                      <div class="input-wrapper">
+                        <input
+                          type="tel"
+                          id="contact-phone-2"
+                          name="contact-phone-2"
+                          class="phone-input"
+                          required
+                        />
+                        <label class="input-label" for="contact-phone-2"
+                          >Номер телефона</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="input-row buttons-row">
+                  <div class="input-col">
+                    <button
+                      type="button"
+                      class="button-reset button-add js-add-button"
+                    >
+                      <span class="text">Добавить еще один контакт</span>
+                      <span class="percent-badge">+5%</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="input-row buttons-row">
+                  <div class="input-col next-col">
+                    <button
+                      type="button"
+                      class="button-reset button js-step-next"
+                      disabled
+                    >
+                      далее
+                    </button>
+                  </div>
+                  <div class="input-col back-col">
+                    <button
+                      type="button"
+                      class="button-reset back-button js-step-back"
+                    >
+                      <span class="icon">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="6"
+                          height="10"
+                          viewBox="0 0 6 10"
+                          fill="none"
+                        >
+                          <path
+                            d="M4.99995 -4.37138e-08L5.99993 1L0.999989 6.00001L-2.18557e-07 5.00001L4.99995 -4.37138e-08Z"
+                            fill="black"
+                          />
+                          <path
+                            d="M6 9L5.00001 10L-2.18557e-07 5.00001L1.00005 3.99999L6 9Z"
+                            fill="black"
+                          />
+                        </svg>
+                      </span>
+                      <span class="text"> Вернуться назад </span>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="container">
-          <div class="title-wrapper">
+        <div class="container sum-container">
+          <div class="title-wrapper title-wrapper--sum">
             <h2 class="sum-title">Сумма</h2>
             <p class="sub-title">
               Чем подробнее заполнена заявка, тем выше шанс одобрения займа.
             </p>
           </div>
           <div class="sum-wrapper content-wrapper">
-            <div class="sum-header">
-              <p class="sum-text">Сумма:</p>
-              <p class="sum">2 000 ₸</p>
-            </div>
+            <div class="slider-wrapper">
+              <div class="sum-header">
+                <p class="sum-text">Сумма:</p>
+                <p class="sum js-total-sum">2 000 ₸</p>
+              </div>
 
-            <div id="slider-non-linear-step"></div>
+              <div id="slider-non-linear-step"></div>
+            </div>
+            <div class="loan-info">
+              <p class="loan-info__text">
+                Дата погашения:<span class="date">10 октября 2021</span>
+              </p>
+              <p class="loan-info__text">
+                Бонус:<span class="bonus">15 дней бесплатно</span>
+              </p>
+              <p class="loan-info__text">
+                Процент после 16 дней:<span class="percent">10%</span>
+              </p>
+              <p class="loan-info__text">
+                Сумма погашения:<span class="final-sum">22 800 ₸</span>
+              </p>
+            </div>
+            <div class="button-wrapper">
+              <button
+                type="submit"
+                class="button button-reset js-application-submit"
+              >
+                Подать заявку
+              </button>
+            </div>
           </div>
         </div>
       </form>

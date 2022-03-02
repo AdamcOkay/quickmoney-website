@@ -23,5 +23,4 @@ import "./components/accordions";
 import "./components/branches";
 import "./components/modals";
 import "./components/custom-select";
-import "./components/range-slider";
 import "./components/application";
