@@ -10,7 +10,8 @@
 @import "base/base", "base/typography", "base/helpers";
 
 // 4. Стили для блоков страницы
-@import "layout/header", "layout/main-nav", "layout/menu", "layout/footer";
+@import "layout/header", "layout/main-nav", "layout/menu", "layout/profile-nav",
+  "layout/footer";
 
 // 5. Компоненты
 @import "components/buttons",
@@ -29,4 +30,4 @@
 
 // 6. Стили для страниц
 @import "pages/content", "pages/contacts", "pages/formpage", "pages/application",
-  "pages/signin", "pages/profile", "pages/home";
+  "pages/id", "pages/signin", "pages/profile", "pages/home";

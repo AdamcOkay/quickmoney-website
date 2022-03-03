@@ -1,0 +1,84 @@
+.profile-page {
+  .nav-container {
+    padding: 25px 0 0 0;
+    overflow-x: auto;
+  }
+
+  .profile-nav {
+    width: max-content;
+    margin-left: 0;
+  }
+  .profile-menu {
+    display: flex;
+    width: max-content;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 5px 5px 0 0;
+    overflow: visible;
+
+    // Для браузеров поддерживающих размытие фона
+    @supports (backdrop-filter: blur(4px)) {
+      backdrop-filter: blur(4px);
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    .active {
+      a {
+        color: #000;
+
+        img {
+          filter: brightness(0);
+        }
+
+        &::before {
+          content: "";
+          display: block;
+          width: 100%;
+          height: calc(100% + 5px);
+          position: absolute;
+          top: -5px;
+          left: 0;
+          background: #fff;
+          border-radius: 5px 5px 0 0;
+          z-index: -1;
+        }
+      }
+    }
+
+    a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      width: 72px;
+      height: 100%;
+      padding: 7px 0;
+      text-decoration: none;
+      text-align: center;
+      color: #fff;
+
+      .breaker {
+        display: block;
+      }
+    }
+
+    .icon {
+      display: block;
+      width: 24px;
+      height: 24px;
+    }
+
+    .text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 24px;
+      font-weight: 600;
+      font-size: 10px;
+      line-height: 12px;
+    }
+  }
+}

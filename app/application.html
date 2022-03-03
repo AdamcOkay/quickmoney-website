@@ -123,7 +123,10 @@
 
     <!-- MAIN START -->
     <main>
-      <form class="js-step-form">
+      <form
+        class="application-form js-step-form"
+        data-container="application-form"
+      >
         <div class="info-container">
           <div class="container title-wrapper">
             <h1>Заявка</h1>
@@ -697,6 +700,48 @@
           </div>
         </div>
       </form>
+
+      <div class="loading" data-container="loading">
+        <h2 class="loading-title">Мы принимаем решение</h2>
+        <div class="loading-body">
+          <svg class="progress-ring" width="220" height="220">
+            <circle
+              class="progress-ring__circle"
+              stroke="white"
+              stroke-width="5"
+              fill="transparent"
+              r="100"
+              cx="110"
+              cy="110"
+            />
+          </svg>
+          <svg
+            class="progress-ring progress-ring--active"
+            width="220"
+            height="220"
+          >
+            <circle
+              class="progress-ring__circle"
+              stroke="white"
+              stroke-width="5"
+              fill="transparent"
+              r="100"
+              cx="110"
+              cy="110"
+            />
+          </svg>
+          <p class="loading-percent js-loading-percent">0%</p>
+        </div>
+        <p class="loading-hint">Это займет какое-то время.</p>
+      </div>
+
+      <div class="result" data-container="result">
+        <h2 class="loading-title">Вам предварительно одобрен микрокредит</h2>
+        <p class="loading-hint">
+          Для получения пройдите фото и видео идентификацию.
+        </p>
+        <a href="/id.html" class="button">Пройти идентификацию</a>
+      </div>
     </main>
     <!-- MAIN END -->
   </body>

@@ -1,0 +1,22 @@
+.profile-page {
+  .content-wrapper {
+    border-radius: 0;
+  }
+
+  .status-title {
+    display: flex;
+    align-items: center;
+
+    .status-icon {
+      width: 30px;
+      height: 30px;
+    }
+
+    h2 {
+      padding-left: 10px;
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 16px;
+    }
+  }
+}

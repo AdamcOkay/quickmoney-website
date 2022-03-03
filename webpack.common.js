@@ -14,6 +14,12 @@ const pages = [
   "signin",
   "pwd",
   "application",
+  "id",
+  "loans",
+  "profile",
+  "cards",
+  "bank-accounts",
+  "contracts",
 ];
 
 module.exports = {

@@ -3,22 +3,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
   forms.forEach((form) => {
     const formInputs = [...form.querySelectorAll("input")],
-      submitButton = form.querySelector(`button[type="submit"]`);
+      submitButton = form.querySelector(`.js-submit-button`);
 
-    formInputs.forEach((input) => {
-      input.addEventListener("input", () => {
-        const isFormValid = formInputs.every((input) => input.checkValidity());
+    if (submitButton) {
+      formInputs.forEach((input) => {
+        input.addEventListener("input", () => {
+          const isFormValid = formInputs.every((input) =>
+            input.checkValidity()
+          );
 
-        if (isFormValid) {
-          submitButton.disabled = false;
-        } else {
-          submitButton.disabled = true;
-        }
+          if (isFormValid) {
+            submitButton.disabled = false;
+          } else {
+            submitButton.disabled = true;
+          }
 
-        if (form.classList.contains("verification-form") && isFormValid) {
-          submitButton.textContent = "Подтвердить";
-        }
+          if (form.classList.contains("verification-form") && isFormValid) {
+            submitButton.textContent = "Подтвердить";
+          }
+        });
       });
-    });
+    }
   });
 });

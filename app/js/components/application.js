@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const isValid = (inputArray) => {
     const allValid = inputArray.every((input) => input.checkValidity());
 
-    console.log(allValid);
     return allValid;
   };
 
@@ -194,11 +193,40 @@ document.addEventListener("DOMContentLoaded", () => {
 
   stepsForm.addEventListener("submit", (event) => {
     event.preventDefault();
-
-    console.log("hui");
   });
 
   submitButton.addEventListener("click", (event) => {
     event.preventDefault();
+
+    showContainer("application-form", "loading");
+    loadingAnimation();
   });
+
+  const loadingContainer = document.querySelector(".loading"),
+    circle = loadingContainer.querySelector(".progress-ring--active circle"),
+    radius = circle.r.baseVal.value,
+    circumference = radius * 2 * Math.PI,
+    loadingPercent = loadingContainer.querySelector(".js-loading-percent");
+
+  const setProgress = (percent) => {
+    setTimeout(function () {
+      const offset = circumference - (percent / 100) * circumference;
+      circle.style.strokeDashoffset = offset;
+
+      loadingPercent.textContent = percent + "%";
+
+      if (percent === 100) {
+        showContainer("loading", "result");
+      }
+    }, 30 * percent);
+  };
+
+  const loadingAnimation = () => {
+    circle.style.strokeDashoffset = `${circumference}`;
+    circle.style.strokeDasharray = `${circumference} ${circumference}`;
+
+    for (let i = 0; i <= 100; i++) {
+      setProgress(i);
+    }
+  };
 });
