@@ -1,4 +1,25 @@
 .profile-page {
+  @media (max-width: $bp-mob) {
+    display: flex;
+    flex-direction: column;
+
+    header {
+      width: 100%;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      flex: 1 1 auto;
+      min-height: calc(100vh - 50px);
+    }
+
+    .content-wrapper {
+      width: 100%;
+      flex: 1 1 auto;
+    }
+  }
+
   .content-wrapper {
     border-radius: 0;
   }
@@ -6,6 +27,7 @@
   .status-title {
     display: flex;
     align-items: center;
+    margin-bottom: 20px;
 
     .status-icon {
       width: 30px;
@@ -17,6 +39,273 @@
       font-size: 15px;
       font-weight: 700;
       line-height: 16px;
+    }
+  }
+
+  .story-title {
+    opacity: 0.5;
+    margin-bottom: 15px;
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .table-row {
+    display: grid;
+    grid-template-columns: 75px 75px 1fr;
+    column-gap: 10px;
+    align-items: center;
+    padding: 15px 0;
+    border-top: 1px solid rgba(#000, 0.05);
+  }
+
+  .table-col {
+    font-size: 12px;
+    line-height: 16px;
+
+    .amount {
+      font-weight: 700;
+    }
+
+    .status {
+      &--declined {
+        color: #fda700;
+      }
+
+      &--ok {
+        background: -webkit-linear-gradient(-90deg, #01d06d 0%, #00c2ff 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      &--error {
+        background: -webkit-linear-gradient(-90deg, #ed1941 0%, #ff007a 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+  }
+
+  .sum-text,
+  .info-text {
+    span {
+      margin-left: 5px;
+      font-weight: 700;
+    }
+  }
+
+  .sum-text {
+    margin-bottom: 20px;
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .loan-info {
+    position: relative;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      left: -15px;
+      bottom: 0;
+      width: calc(100% + 30px);
+      height: 1px;
+      background: rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .info-text {
+    margin-bottom: 20px;
+    opacity: 0.5;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .item-title {
+    margin-bottom: 10px;
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .dropdown {
+    margin-bottom: 20px;
+  }
+
+  .docs-container {
+    margin: 0 -15px;
+    padding: 0 15px;
+    overflow-x: auto;
+  }
+
+  .docs-list {
+    display: flex;
+    width: max-content;
+
+    a {
+      margin-right: 5px;
+      font-size: 12px;
+      line-height: 15px;
+    }
+  }
+
+  .button {
+    width: 100%;
+    margin: 30px auto 0;
+  }
+
+  .declined {
+    .status-title {
+      margin-bottom: 10px;
+    }
+  }
+
+  .date-text {
+    margin-bottom: 30px;
+    padding-left: 40px;
+    font-size: 12px;
+    line-height: 16px;
+
+    .date-days {
+      display: block;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 16px;
+      background: -webkit-linear-gradient(-90deg, #01d06d 0%, #00c2ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  .empty {
+    display: grid;
+    padding-bottom: 100px;
+
+    .status-title {
+      grid-area: title;
+      margin-bottom: 24px;
+
+      h2 {
+        padding-left: 0;
+      }
+    }
+
+    .transaction-story {
+      grid-area: table;
+    }
+
+    .button-block {
+      grid-area: button;
+      position: absolute;
+      width: 100%;
+      padding: 10px 0;
+      left: 0;
+      border-top: 1px solid #f4f4f4;
+      bottom: 0;
+    }
+
+    .button {
+      margin: 0 auto;
+    }
+
+    @media (min-width: $bp-md) {
+      grid-template-areas:
+        "title"
+        "button"
+        "table";
+
+      .status-title {
+        display: block;
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .button-block {
+        position: relative;
+        border: none;
+        padding: 0;
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  @media (min-width: $bp-md) {
+    .content-wrapper {
+      border-radius: 0px 10px 10px 10px;
+      min-height: 600px;
+    }
+
+    .status-title {
+      margin-bottom: 40px;
+
+      h2 {
+        padding-left: 15px;
+        font-size: 23px;
+        line-height: 27px;
+      }
+    }
+
+    .transaction-story {
+      max-width: 570px;
+      margin: 0 auto;
+    }
+
+    .table-row {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .table-col {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  @media (min-width: $bp-tab) {
+    .content-wrapper {
+      padding: 40px 55px;
+    }
+
+    .success-body {
+      padding: 0 45px;
+    }
+
+    .loan-info {
+      &::after {
+        left: 0;
+        width: 100%;
+      }
+    }
+
+    .docs-list {
+      a {
+        padding: 10px;
+        max-width: 225px;
+        margin-right: 15px;
+      }
+    }
+
+    .checkbox-container {
+      max-width: 280px;
+    }
+
+    .button {
+      margin-left: 0;
+    }
+
+    .date-text {
+      margin-bottom: 40px;
+      padding-left: 45px;
+      font-size: 16px;
+      line-height: 20px;
+
+      .date-days {
+        display: inline;
+        margin-left: 5px;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 18px;
+      }
     }
   }
 }

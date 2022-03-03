@@ -179,81 +179,188 @@
         </nav>
       </div>
       <div class="container content-wrapper">
-        <div class="pending">
+        <div class="approved">
           <div class="status-title">
             <div class="status-icon">
               <img
-                src="../assets/icons/profileIcons/processing.svg"
-                alt="processing"
+                src="../assets/icons/profileIcons/approved.svg"
+                alt="approved"
               />
             </div>
-            <h2>Ваша заявка в обработке</h2>
+            <h2>Вам одобрен микрокредит</h2>
           </div>
 
-          <div class="transaction-story">
-            <p class="story-title">История микрокредитов:</p>
+          <div class="success-body">
+            <p class="sum-text">
+              Сумма микрокредита:<span class="total-sum">20 000 ₸</span>
+            </p>
 
-            <div class="transaction-table">
-              <div class="table-row">
-                <div class="table-col">
-                  <p class="amount">70 000 ₸</p>
+            <div class="loan-info">
+              <p class="info-text">
+                Дата погашения: <span class="date">10 октября 2021</span>
+              </p>
+              <p class="info-text">
+                Бонус: <span class="bonus">15 дней бесплатно</span>
+              </p>
+              <p class="info-text">
+                Процент после 16 дней: <span class="percent">10%</span>
+              </p>
+              <p class="info-text">
+                Сумма погашения: <span class="loan-sumw">22 800 ₸</span>
+              </p>
+            </div>
+
+            <div class="success-item">
+              <p class="item-title">Счет для поступления денег:</p>
+              <div class="dropdown">
+                <p class="dropdown-label">Сохраненные счета:</p>
+                <div class="choosen-item item">
+                  <div class="item-icon">
+                    <img
+                      src="../assets/icons/profileIcons/kaspi-dropdown.png"
+                      alt="kaspi"
+                    />
+                  </div>
+                  <p class="item-text">**** **** **** 5468</p>
                 </div>
-                <div class="table-col">
-                  <p class="date">05.09.2021</p>
-                </div>
-                <div class="table-col">
-                  <p class="status status--declined">Клиент отказался</p>
+
+                <div class="items-list">
+                  <div class="item">
+                    <div class="item-icon">
+                      <img
+                        src="../assets/icons/profileIcons/kaspi-dropdown.png"
+                        alt="kaspi"
+                      />
+                    </div>
+                    <p class="item-text">**** **** **** 5468</p>
+                  </div>
+                  <div class="item">
+                    <div class="item-icon">
+                      <img
+                        src="../assets/icons/profileIcons/kaspi-dropdown.png"
+                        alt="kaspi"
+                      />
+                    </div>
+                    <p class="item-text">**** **** **** 2145</p>
+                  </div>
+                  <div class="item">
+                    <div class="item-icon">
+                      <img
+                        src="../assets/icons/profileIcons/kaspi-dropdown.png"
+                        alt="kaspi"
+                      />
+                    </div>
+                    <p class="item-text">**** **** **** 3566</p>
+                  </div>
                 </div>
               </div>
-              <div class="table-row">
-                <div class="table-col">
-                  <p class="amount">70 000 ₸</p>
-                </div>
-                <div class="table-col">
-                  <p class="date">05.09.2021</p>
-                </div>
-                <div class="table-col">
-                  <p class="status status--ok">Одобрен</p>
-                </div>
-              </div>
-              <div class="table-row">
-                <div class="table-col">
-                  <p class="amount">70 000 ₸</p>
-                </div>
-                <div class="table-col">
-                  <p class="date">05.09.2021</p>
-                </div>
-                <div class="table-col">
-                  <p class="status status--error">Отказано сервисом</p>
+            </div>
+            <div class="success-item">
+              <p class="item-title">Документы:</p>
+              <div class="docs-container no-scrollbar">
+                <div class="docs-list">
+                  <a href="/" class="file-link file-link--pdf"
+                    >Договор по микрокредиту №26724</a
+                  >
+                  <a href="/" class="file-link">Публичная оферта</a>
+                  <a href="/" class="file-link file-link--pdf"
+                    >Правила предоставления микрокредитов</a
+                  >
+                  <a href="/" class="file-link file-link--pdf"
+                    >Политика в отношении обработки персональных данных</a
+                  >
                 </div>
               </div>
-              <div class="table-row">
-                <div class="table-col">
-                  <p class="amount">70 000 ₸</p>
-                </div>
-                <div class="table-col">
-                  <p class="date">05.09.2021</p>
-                </div>
-                <div class="table-col">
-                  <p class="status status--ok">КОдобрен</p>
-                </div>
-              </div>
-              <div class="table-row">
-                <div class="table-col">
-                  <p class="amount">70 000 ₸</p>
-                </div>
-                <div class="table-col">
-                  <p class="date">05.09.2021</p>
-                </div>
-                <div class="table-col">
-                  <p class="status status--ok">КОдобрен</p>
-                </div>
-              </div>
+
+              <label class="checkbox-container click-container"
+                >Ознакомлен(на) со всеми предоставленными документами.
+                <input type="checkbox" checked disabled required />
+                <span class="checkmark"></span>
+              </label>
+
+              <button
+                class="button-reset button js-call-modal"
+                data-call="smsModal"
+              >
+                отправить смс-код
+              </button>
             </div>
           </div>
         </div>
       </div>
     </main>
     <!-- MAIN END -->
+
+    <!-- MODALS START -->
+    <div
+      class="qm-modal js-modal"
+      data-modal="smsModal"
+      data-modal-setting="close"
+    >
+      <div class="qm-modal-content">
+        <button class="button-reset close-modal" data-modal-setting="close">
+          <img src="../assets/icons/contentIcons/close.svg" alt="закрыть" />
+        </button>
+        <div class="qm-modal-body">
+          <h2>Подтверждение номера</h2>
+          <p>
+            Введите код подтверждения, отправленный по смс на номер
+            +7&nbsp;***&nbsp;***&nbsp;1122.
+          </p>
+
+          <form action="" class="verification-form">
+            <div class="input-row">
+              <div class="input-col">
+                <input
+                  type="text"
+                  maxlength="1"
+                  pattern="\d*"
+                  placeholder="*"
+                  required
+                />
+              </div>
+              <div class="input-col">
+                <input
+                  type="text"
+                  maxlength="1"
+                  pattern="\d*"
+                  placeholder="*"
+                  required
+                />
+              </div>
+              <div class="input-col">
+                <input
+                  type="text"
+                  maxlength="1"
+                  pattern="\d*"
+                  placeholder="*"
+                  required
+                />
+              </div>
+              <div class="input-col">
+                <input
+                  type="text"
+                  maxlength="1"
+                  pattern="\d*"
+                  placeholder="*"
+                  required
+                />
+              </div>
+            </div>
+            <button
+              type="button"
+              class="button-reset button js-submit-button"
+              disabled="disabled"
+              data-modal-setting="close"
+            >
+              <span class="text">Отправить еще раз</span>
+              <span class="timer">20 сек</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODALS END -->
   </body>
 </html>

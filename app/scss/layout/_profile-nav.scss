@@ -1,5 +1,6 @@
 .profile-page {
   .nav-container {
+    width: 100%;
     padding: 25px 0 0 0;
     overflow-x: auto;
   }
@@ -8,6 +9,7 @@
     width: max-content;
     margin-left: 0;
   }
+
   .profile-menu {
     display: flex;
     width: max-content;
@@ -79,6 +81,33 @@
       font-weight: 600;
       font-size: 10px;
       line-height: 12px;
+    }
+  }
+
+  @media (min-width: $bp-md) {
+    .profile-menu {
+      a {
+        flex-direction: row;
+        align-items: center;
+        width: max-content;
+        height: 100%;
+        padding: 15px 25px;
+
+        .breaker {
+          display: inline;
+        }
+      }
+
+      .icon {
+        margin-right: 10px;
+      }
+
+      .text {
+        display: inline;
+        min-height: unset;
+        font-size: 16px;
+        line-height: 20px;
+      }
     }
   }
 }
