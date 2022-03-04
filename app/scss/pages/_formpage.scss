@@ -51,25 +51,6 @@
     border-radius: 10px;
   }
 
-  .input-row {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
-
-  .input-wrapper,
-  .input-col {
-    position: relative;
-  }
-
-  .input-label {
-    position: absolute;
-    top: 50%;
-    left: 20px;
-    transform: translateY(-50%);
-    transition: all 0.2s;
-  }
-
   .forgot {
     display: block;
     width: fit-content;
@@ -112,16 +93,6 @@
       margin-bottom: 25px;
       font-size: 18px;
       line-height: 26px;
-    }
-
-    .input-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
-    }
-
-    .button-col {
-      grid-column-start: 3;
     }
 
     .forgot {

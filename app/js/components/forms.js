@@ -9,11 +9,15 @@ document.addEventListener("DOMContentLoaded", () => {
       formInputs.forEach((input) => {
         input.addEventListener("input", () => {
           const isFormValid = formInputs.every((input) =>
-            input.checkValidity()
-          );
+              input.checkValidity()
+            ),
+            extendModalInfo = form.querySelector(".extend-info");
 
           if (isFormValid) {
             submitButton.disabled = false;
+            if (extendModalInfo) {
+              extendModalInfo.style.opacity = 1;
+            }
           } else {
             submitButton.disabled = true;
           }

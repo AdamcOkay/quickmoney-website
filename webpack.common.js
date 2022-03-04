@@ -19,6 +19,8 @@ const pages = [
   "loans-success",
   "loans-empty",
   "loans-decline",
+  "loans-inprogress",
+  "loans-extend",
   "profile",
   "cards",
   "bank-accounts",

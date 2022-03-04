@@ -1,0 +1,144 @@
+.tabs-wrapper {
+  @media (min-width: $bp-md) {
+    display: grid;
+    grid-template-columns: 330px 1fr;
+    gap: 50px;
+  }
+}
+
+.tab-controls {
+  display: block;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  @media (max-width: $bp-md) {
+    &--hidden {
+      display: none;
+    }
+  }
+}
+
+.tab-button {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 12px 20px 12px 15px;
+  margin-bottom: 15px;
+  text-align-last: left;
+  border: 1px solid $input-grey;
+  border-radius: 5px;
+  font-size: 14px;
+  line-height: 18px;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 8px;
+    height: 12px;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background: url("/assets/icons/contentIcons/angle.svg") no-repeat;
+  }
+
+  @media (min-width: $bp-md) {
+    &--active {
+      border-color: $primary-yellow;
+    }
+  }
+}
+
+.tab-content {
+  display: none;
+  position: relative;
+
+  &--active {
+    display: block;
+  }
+
+  @media (max-width: $bp-md) {
+    &--first {
+      display: none;
+    }
+  }
+
+  .tab-header {
+    position: relative;
+  }
+
+  h2 {
+    margin-bottom: 20px;
+    font-size: 18px;
+    line-height: 20px;
+
+    @media (min-width: $bp-md) {
+      margin-bottom: 25px;
+      font-size: 23px;
+      line-height: 27px;
+    }
+  }
+
+  h3 {
+    margin-bottom: 15px;
+    font-size: 15px;
+    line-height: 16px;
+  }
+
+  .go-back {
+    display: block;
+    width: 8px;
+    height: 22px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    padding: 0;
+    transform: translateY(-50%) scale(-1);
+    line-height: 22px;
+
+    @media (min-width: $bp-md) {
+      display: none;
+    }
+  }
+
+  .tab-title {
+    padding-left: 28px;
+
+    @media (min-width: $bp-md) {
+      padding-left: 0;
+    }
+  }
+
+  .input-row {
+    margin-bottom: 20px;
+
+    @media (min-width: $bp-md) {
+      grid-template-columns: 1fr 1fr;
+      column-gap: 30px;
+      row-gap: 25px;
+      margin-bottom: 40px;
+    }
+  }
+
+  .radio-col {
+    padding-left: 20px;
+  }
+
+  .radio-wrapper {
+    display: flex;
+  }
+
+  .radio-container {
+    margin-right: 30px;
+  }
+
+  .contact-title {
+    font-size: 14px;
+    line-height: 16px;
+    @media (min-width: $bp-md) {
+      font-size: 20px;
+      line-height: 30px;
+    }
+  }
+}

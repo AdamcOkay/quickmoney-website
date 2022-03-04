@@ -130,7 +130,7 @@
           aria-label="Меню личного кабинета"
         >
           <ul class="profile-menu">
-            <li class="profile-menu__items">
+            <li class="profile-menu__items active">
               <a href="/loans.html">
                 <span class="icon">
                   <img src="../assets/icons/profileIcons/loans.svg" alt="" />
@@ -164,7 +164,7 @@
                 <span class="text">Счета</span>
               </a>
             </li>
-            <li class="profile-menu__items active">
+            <li class="profile-menu__items">
               <a href="/contracts.html">
                 <span class="icon">
                   <img
@@ -179,20 +179,164 @@
         </nav>
       </div>
       <div class="container content-wrapper">
-        <div class="contracts-list">
-          <a href="/" class="file-link file-link--pdf"
-            >Договор о предоставлении микрокредита</a
-          >
-          <a href="/" class="file-link file-link--pdf"
-            >Правила предоставления микрокредитов</a
-          >
-          <a href="/" class="file-link file-link--pdf"
-            >Политика в отношении обработки персональных данных</a
-          >
-          <a href="/" class="file-link file-link--pdf">Лицензия 05.21.0003.M</a>
+        <div class="inprogress">
+          <div class="loan-wrapper">
+            <div class="loan-body">
+              <p class="loan-title">Задолженность на 14 сентября:</p>
+              <p class="loan-amount">60 000 ₸</p>
+
+              <div class="loan-info">
+                <div class="loan-info__item">
+                  <p class="info-title">Вы получили:</p>
+                  <p class="info-amount recieved">50 000 ₸</p>
+                </div>
+                <div class="loan-info__item">
+                  <p class="info-title">Пеня:</p>
+                  <p class="info-amount fine">0 ₸</p>
+                </div>
+                <div class="loan-info__item">
+                  <p class="info-title">Процент:</p>
+                  <p class="info-amount fine">0 ₸</p>
+                </div>
+              </div>
+
+              <div class="loan-remaining">
+                <p class="remaining-title">Осталось 10 дней:</p>
+                <p class="remaining-text">
+                  Ваш кредит необходимо оплатить до 22:00 25 сентября 2021 года.
+                </p>
+              </div>
+              <a href="#" class="button">Оплатить микрокредит</a>
+            </div>
+            <button
+              class="button-reset border-button js-call-modal"
+              data-call="extendModal"
+            >
+              продлить
+            </button>
+          </div>
+          <div class="transaction-story">
+            <p class="story-title">История микрокредитов:</p>
+
+            <div class="transaction-table">
+              <div class="table-row">
+                <div class="table-col">
+                  <p class="amount">70 000 ₸</p>
+                </div>
+                <div class="table-col">
+                  <p class="date">05.09.2021</p>
+                </div>
+                <div class="table-col">
+                  <p class="status status--declined">Клиент отказался</p>
+                </div>
+              </div>
+              <div class="table-row">
+                <div class="table-col">
+                  <p class="amount">70 000 ₸</p>
+                </div>
+                <div class="table-col">
+                  <p class="date">05.09.2021</p>
+                </div>
+                <div class="table-col">
+                  <p class="status status--ok">Одобрен</p>
+                </div>
+              </div>
+              <div class="table-row">
+                <div class="table-col">
+                  <p class="amount">70 000 ₸</p>
+                </div>
+                <div class="table-col">
+                  <p class="date">05.09.2021</p>
+                </div>
+                <div class="table-col">
+                  <p class="status status--error">Отказано сервисом</p>
+                </div>
+              </div>
+              <div class="table-row">
+                <div class="table-col">
+                  <p class="amount">70 000 ₸</p>
+                </div>
+                <div class="table-col">
+                  <p class="date">05.09.2021</p>
+                </div>
+                <div class="table-col">
+                  <p class="status status--ok">КОдобрен</p>
+                </div>
+              </div>
+              <div class="table-row">
+                <div class="table-col">
+                  <p class="amount">70 000 ₸</p>
+                </div>
+                <div class="table-col">
+                  <p class="date">05.09.2021</p>
+                </div>
+                <div class="table-col">
+                  <p class="status status--ok">КОдобрен</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </main>
     <!-- MAIN END -->
+
+    <!-- MODALS START -->
+    <div
+      class="qm-modal js-modal"
+      data-modal="extendModal"
+      data-modal-setting="close"
+    >
+      <div class="qm-modal-content">
+        <button class="button-reset close-modal" data-modal-setting="close">
+          <img src="../assets/icons/contentIcons/close.svg" alt="закрыть" />
+        </button>
+        <div class="qm-modal-body">
+          <h2>Продление микрокредита</h2>
+          <p>Выберите скрок продления:</p>
+
+          <form action="" class="extend-form">
+            <div class="extend-grid">
+              <label for="5days" class="extend-radio">
+                <input type="radio" name="extend-radio" id="5days" />
+                <span>5 дней</span>
+              </label>
+              <label for="10days" class="extend-radio">
+                <input type="radio" name="extend-radio" id="10days" />
+                <span>10 дней</span>
+              </label>
+              <label for="15days" class="extend-radio">
+                <input type="radio" name="extend-radio" id="15days" />
+                <span>15 дней</span>
+              </label>
+              <label for="maxdays" class="extend-radio stretched-radio">
+                <input type="radio" name="extend-radio" id="maxdays" />
+                <span>Максимальный срок продления</span>
+              </label>
+            </div>
+            <div class="extend-info">
+              <p class="extend-text">
+                Процент:<span class="extend-percent">10%</span>
+              </p>
+              <p class="extend-text">
+                Дата погашения:<span class="extend-percent"
+                  >10 декабря 2021</span
+                >
+              </p>
+            </div>
+            <button
+              type="button"
+              class="button-reset button js-submit-button"
+              disabled="disabled"
+              data-modal-setting="close"
+            >
+              продлить микрокредит
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODALS END -->
   </body>
 </html>
