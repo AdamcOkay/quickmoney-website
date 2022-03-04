@@ -189,16 +189,9 @@
     }
   }
 
-  .empty {
+  .empty,
+  .details {
     padding-bottom: 100px;
-
-    .status-title {
-      margin-bottom: 24px;
-
-      h2 {
-        padding-left: 0;
-      }
-    }
 
     .button-block {
       position: absolute;
@@ -211,6 +204,24 @@
 
     .button {
       margin: 0 auto;
+    }
+
+    @media (min-width: $bp-md) {
+      .button-block {
+        position: relative;
+        border: none;
+        padding: 0;
+      }
+    }
+  }
+
+  .empty {
+    .status-title {
+      margin-bottom: 24px;
+
+      h2 {
+        padding-left: 0;
+      }
     }
 
     @media (min-width: $bp-md) {
@@ -233,9 +244,6 @@
 
       .button-block {
         grid-area: button;
-        position: relative;
-        border: none;
-        padding: 0;
         margin-bottom: 50px;
       }
     }
@@ -448,5 +456,152 @@
   .contracts-list {
     max-width: 800px;
     margin: 0 auto;
+  }
+
+  .empty-text {
+    margin-bottom: 20px;
+    font-size: 15px;
+    line-height: 20px;
+  }
+
+  .add,
+  .edit {
+    display: none;
+
+    .go-back {
+      display: block;
+      width: 8px;
+      height: 22px;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      padding: 0;
+      transform: translateY(-50%) scale(-1);
+      line-height: 22px;
+    }
+  }
+
+  .add-header,
+  .edit-header {
+    position: relative;
+  }
+
+  .add-title,
+  .edit-title {
+    margin-bottom: 20px;
+    padding-left: 28px;
+    font-size: 18px;
+    line-height: 20px;
+
+    @media (min-width: $bp-md) {
+      margin-bottom: 25px;
+      font-size: 23px;
+      line-height: 27px;
+    }
+  }
+
+  .item-body {
+    position: relative;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid $input-grey;
+    border-radius: 10px;
+
+    .input-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    input {
+      padding: 10px;
+      text-align: center;
+
+      &:read-only {
+        cursor: default;
+      }
+    }
+
+    .logos {
+      display: flex;
+      align-items: center;
+      height: 50px;
+
+      div {
+        line-height: 0;
+      }
+
+      .service {
+        max-width: 62px;
+        margin-right: 20px;
+      }
+
+      .bank {
+        max-width: 50px;
+      }
+    }
+
+    .edit-button {
+      padding: 0;
+      margin: 0;
+      position: absolute;
+      right: 15px;
+      bottom: 15px;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 19px;
+    }
+  }
+
+  .bill-body {
+    display: grid;
+    grid-template-columns: 1fr 50px;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 10px;
+
+    input {
+      padding: 10px 15px;
+      height: 36px;
+      text-align: left;
+      text-transform: uppercase;
+    }
+
+    .edit-button {
+      padding-right: 5px;
+      position: relative;
+      right: unset;
+      bottom: unset;
+      grid-column: 1 / span 2;
+      grid-row: 2 / 2;
+      text-align: right;
+    }
+  }
+
+  .add {
+    .button {
+      display: none;
+    }
+
+    .logos {
+      opacity: 0;
+    }
+
+    &-filled {
+      .button {
+        display: block;
+      }
+
+      .logos {
+        opacity: 1;
+      }
+    }
+  }
+
+  .bill-details {
+    .add .logos {
+      opacity: 1;
+    }
   }
 }

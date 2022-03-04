@@ -38,3 +38,4 @@ import "./components/steps";
 import "./components/application";
 import "./components/id";
 import "./components/profile-tabs";
+import "./components/profile-details";

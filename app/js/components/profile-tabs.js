@@ -24,7 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   goBackButtons.forEach((btn) => {
     btn.addEventListener("click", () => {
-      console.log("sad");
       const activeTab = document.querySelector(".tab-content--active");
 
       activeTab.classList.remove("tab-content--active");

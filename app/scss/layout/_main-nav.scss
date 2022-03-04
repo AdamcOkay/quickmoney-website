@@ -66,6 +66,18 @@
     display: none;
   }
 
+  .logout-button {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    line-height: 100%;
+    margin-right: 5px;
+    @media (min-width: $bp-tab) {
+      margin-left: 5px;
+      margin-right: 0;
+    }
+  }
+
   .hamburger {
     display: flex;
     align-items: center;
