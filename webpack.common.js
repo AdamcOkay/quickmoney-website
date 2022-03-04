@@ -30,7 +30,7 @@ const pages = [
 module.exports = {
   entry: "./app/js/main.js",
   output: {
-    assetModuleFilename: "[path][name][ext]",
+    assetModuleFilename: "assets/[name].[hash][ext][query]",
   },
 
   plugins: [].concat(
