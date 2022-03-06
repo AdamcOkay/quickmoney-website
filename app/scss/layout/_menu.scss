@@ -134,6 +134,10 @@
       &__item {
         margin-right: 25px;
         font-size: 14px;
+
+        a:hover {
+          color: $primary-yellow;
+        }
       }
     }
   }

@@ -27,6 +27,21 @@ footer {
     &::before {
       display: none;
     }
+
+    a:hover {
+      color: $primary-yellow;
+
+      svg path {
+        stroke: $primary-yellow;
+      }
+    }
+
+    .social-icon:hover {
+      svg path {
+        fill: $primary-yellow;
+        stroke: none;
+      }
+    }
   }
 }
 

@@ -47,6 +47,10 @@
     background: rgba(#fff, 0.9);
     margin: 30px auto 0;
     z-index: 2;
+
+    &:active {
+      background: #fff;
+    }
   }
 
   .new-password-form {
@@ -73,6 +77,10 @@
     .forgot {
       margin: 0 0 0 auto;
       padding-top: 10px;
+
+      &:hover {
+        color: $primary-pink;
+      }
     }
 
     .button {
@@ -80,14 +88,21 @@
       padding: 17px 30px 17px 30px;
       font-size: 18px;
       line-height: 16px;
-    }
-
-    .form-login-button {
       height: 55px;
     }
 
     .button--white {
       margin: 30px auto 0;
+      padding: 0 30px;
+      line-height: 55px;
+
+      &:hover {
+        background: rgba(#fff, 0.95);
+      }
+
+      &:active {
+        background: #fff;
+      }
     }
   }
 }

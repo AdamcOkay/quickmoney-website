@@ -166,6 +166,10 @@
       &__item {
         font-size: 14px;
         line-height: 17px;
+
+        &:hover {
+          color: $primary-yellow;
+        }
       }
     }
 
@@ -199,6 +203,14 @@
         height: 18px;
         margin-right: 5px;
       }
+
+      &:hover {
+        color: $primary-yellow;
+
+        svg path {
+          stroke: $primary-yellow;
+        }
+      }
     }
 
     .login-button {
@@ -223,6 +235,15 @@
         text-transform: uppercase;
         font-size: 12px;
         line-height: 15px;
+      }
+      @media (min-width: $bp-md) {
+        &:hover {
+          background: #f8d612;
+        }
+      }
+
+      &:active {
+        background: #f5d104;
       }
     }
 

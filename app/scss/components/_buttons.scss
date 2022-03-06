@@ -29,6 +29,14 @@
       width: 100%;
       padding: 21px 0;
     }
+
+    &:hover {
+      background: #f8d612;
+    }
+  }
+
+  &:active {
+    background: #f5d104;
   }
 }
 
