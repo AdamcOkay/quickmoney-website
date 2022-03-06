@@ -75,6 +75,7 @@ input {
   }
 }
 
+.edited-input + .input-label,
 input:focus + .input-label,
 input:valid + .input-label {
   top: 7px;
@@ -269,4 +270,23 @@ input:valid + .input-label {
 
 .select-hide {
   display: none;
+}
+
+input[type="date"] {
+  display: block;
+  padding: 20px 20px 8px;
+
+  &:focus {
+    padding: 20px 20px 8px;
+  }
+
+  @media (min-width: $bp-lg) {
+    padding: 20px 20px 8px;
+    height: 55px;
+  }
+}
+
+.bill-input {
+  font-size: 15px;
+  line-height: 16px;
 }

@@ -8,6 +8,32 @@ body {
   font-weight: 400;
 }
 
+body {
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: url("/assets/bg/blur.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: -200px 100px;
+  }
+
+  @media (min-width: $bp-md) {
+    &::before {
+      top: 80px;
+      left: -100px;
+      width: 1080px;
+      height: 990px;
+      background-image: url("/assets/bg/blur-web.png");
+      background-position: 0 0;
+    }
+  }
+}
 h1,
 h2,
 h3,

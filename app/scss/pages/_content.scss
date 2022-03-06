@@ -1,18 +1,4 @@
 .contentpage {
-  @media (min-width: $bp-md) {
-    &::before {
-      content: "";
-      position: absolute;
-      display: block;
-      top: 80px;
-      left: -100px;
-      width: 1080px;
-      height: 990px;
-      background: url("/assets/bg/blur-web.png") no-repeat;
-      background-size: contain;
-    }
-  }
-
   .content-wrapper {
     padding-top: 30px;
     padding-bottom: 75px;

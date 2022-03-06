@@ -5,8 +5,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const phoneInputs = document.querySelectorAll(".phone-input");
     const cardInputs = document.querySelectorAll(".card-input");
     const billsInputs = document.querySelectorAll(".bill-input");
-    const idInput = document.getElementById("doc-id");
-    const smsInput = document.getElementById("sms-code");
+    const idInput = document.querySelectorAll(".doc-id");
+    const idNumInput = document.querySelectorAll(".id-num");
+    const smsInput = document.querySelectorAll(".sms-code");
 
     const maskOptions = {
       mask: "+{7} (000) 000-00-00",
@@ -14,6 +15,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const idMaskOptions = {
       mask: "000 000 000 000",
+    };
+
+    const idNumMaskOptions = {
+      mask: "000000000",
     };
 
     const smsMaskOptions = {
@@ -25,7 +30,12 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     const billMaskOptions = {
-      mask: "**** **** *** **** ****",
+      mask: "#### #### #### #### ####",
+      definitions: {
+        // <any single char>: <same type as mask (RegExp, Function, etc.)>
+        // defaults are '0', 'a', '*'
+        "#": /^[A-Za-z0-9]+$/,
+      },
     };
 
     phoneInputs.forEach((input) => {
@@ -46,13 +56,23 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    if (idInput) {
-      const mask = IMask(idInput, idMaskOptions);
-    }
+    idInput.forEach((input) => {
+      if (input) {
+        const mask = IMask(input, idMaskOptions);
+      }
+    });
 
-    if (smsInput) {
-      const mask = IMask(smsInput, smsMaskOptions);
-    }
+    idNumInput.forEach((input) => {
+      if (input) {
+        const mask = IMask(input, idNumMaskOptions);
+      }
+    });
+
+    smsInput.forEach((input) => {
+      if (input) {
+        const mask = IMask(input, smsMaskOptions);
+      }
+    });
   };
 
   addMasks();

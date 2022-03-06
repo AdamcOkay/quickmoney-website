@@ -208,9 +208,7 @@
 
     @media (min-width: $bp-md) {
       .button-block {
-        position: relative;
-        border: none;
-        padding: 0;
+        display: none;
       }
     }
   }
@@ -462,6 +460,16 @@
     margin-bottom: 20px;
     font-size: 15px;
     line-height: 20px;
+
+    @media (min-width: $bp-md) {
+      width: 500px;
+      font-size: 23px;
+      line-height: 27px;
+    }
+  }
+
+  .button-add {
+    margin-left: 0;
   }
 
   .add,
@@ -478,6 +486,22 @@
       padding: 0;
       transform: translateY(-50%) scale(-1);
       line-height: 22px;
+    }
+
+    @media (min-width: $bp-md) {
+      width: 330px;
+      margin: 0 auto;
+
+      .add-header,
+      .edit-header {
+        width: 235px;
+        margin: 0 auto 40px;
+
+        h2 {
+          font-size: 20px;
+          line-height: 25px;
+        }
+      }
     }
   }
 
@@ -551,6 +575,10 @@
       font-size: 12px;
       font-weight: 700;
       line-height: 19px;
+    }
+
+    @media (min-width: $bp-md) {
+      margin-bottom: 40px;
     }
   }
 

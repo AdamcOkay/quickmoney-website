@@ -8,15 +8,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const rangeSlider = document.getElementById("slider-non-linear-step");
 
   noUiSlider.create(rangeSlider, {
-    start: [10000],
+    start: [25000],
     connect: [true, false],
     format: {
       to: (v) => v | 0,
       from: (v) => v | 0,
     },
     range: {
-      min: [10000, 10000],
-      "30%": [50000, 10000],
+      min: [25000, 5000],
+      "30%": [50000, 5000],
       "60%": [100000, 5000],
       max: [145000, 5000],
     },
