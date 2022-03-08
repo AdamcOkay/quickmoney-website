@@ -457,95 +457,110 @@
             <h2 class="tab-title">Контактные лица</h2>
           </div>
           <form action="">
-            <h3 class="contact-title">
-              <span class="contact-count">Первый</span> контакт:
-            </h3>
-            <div class="input-row">
-              <div class="input-col">
-                <div class="input-wrapper">
-                  <input
-                    type="text"
-                    id="contact-name-1"
-                    name="contact-name-1"
-                    required
-                  />
-                  <label class="input-label" for="contact-name-1">Имя</label>
+            <div class="contacts-wrapper">
+              <div class="input-row contact-row">
+                <div class="contact-title-block">
+                  <h3 class="contact-title">
+                    <span class="contact-count">Первый</span> контакт:
+                  </h3>
                 </div>
-              </div>
-              <div class="input-col">
-                <div class="input-wrapper">
-                  <div class="custom-select">
-                    <select name="contact-who-1" id="contact-who-1">
-                      <option value="0">Кем приходится</option>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
-                    </select>
+                <div class="input-col">
+                  <div class="input-wrapper">
+                    <input
+                      type="text"
+                      id="contact-name-1"
+                      name="contact-name-1"
+                      required
+                    />
+                    <label class="input-label" for="contact-name-1">Имя</label>
+                  </div>
+                </div>
+                <div class="input-col">
+                  <div class="input-wrapper">
+                    <div class="custom-select">
+                      <select name="contact-who-1" id="contact-who-1">
+                        <option value="0">Кем приходится</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="input-col">
+                  <div class="input-wrapper">
+                    <input
+                      type="tel"
+                      id="contact-phone-1"
+                      name="contact-phone-1"
+                      class="phone-input"
+                      required
+                    />
+                    <label class="input-label" for="contact-phone-1"
+                      >Номер телефона</label
+                    >
                   </div>
                 </div>
               </div>
-              <div class="input-col">
-                <div class="input-wrapper">
-                  <input
-                    type="tel"
-                    id="contact-phone-1"
-                    name="contact-phone-1"
-                    class="phone-input"
-                    required
-                  />
-                  <label class="input-label" for="contact-phone-1"
-                    >Номер телефона</label
-                  >
+              <div class="input-row contact-row">
+                <div class="contact-title-block">
+                  <h3 class="contact-title">
+                    <span class="contact-count">Второй</span> контакт:
+                  </h3>
                 </div>
-              </div>
-            </div>
-            <h3 class="contact-title">
-              <span class="contact-count">Второй</span> контакт:
-            </h3>
-            <div class="input-row">
-              <div class="input-col">
-                <div class="input-wrapper">
-                  <input
-                    type="text"
-                    id="contact-name-2"
-                    name="contact-name-2"
-                    required
-                  />
-                  <label class="input-label" for="contact-name-2">Имя</label>
+                <div class="input-col">
+                  <div class="input-wrapper">
+                    <input
+                      type="text"
+                      id="contact-name-2"
+                      name="contact-name-2"
+                      required
+                    />
+                    <label class="input-label" for="contact-name-2">Имя</label>
+                  </div>
                 </div>
-              </div>
-              <div class="input-col">
-                <div class="input-wrapper">
-                  <div class="custom-select">
-                    <select name="contact-who-2" id="contact-who-2">
-                      <option value="0">Кем приходится</option>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
-                    </select>
+                <div class="input-col">
+                  <div class="input-wrapper">
+                    <div class="custom-select">
+                      <select name="contact-who-2" id="contact-who-2">
+                        <option value="0">Кем приходится</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="input-col">
+                  <div class="input-wrapper">
+                    <input
+                      type="tel"
+                      id="contact-phone-2"
+                      name="contact-phone-2"
+                      class="phone-input"
+                      required
+                    />
+                    <label class="input-label" for="contact-phone-2"
+                      >Номер телефона</label
+                    >
                   </div>
                 </div>
               </div>
+            </div>
+            <div class="input-row buttons-row">
               <div class="input-col">
-                <div class="input-wrapper">
-                  <input
-                    type="tel"
-                    id="contact-phone-2"
-                    name="contact-phone-2"
-                    class="phone-input"
-                    required
-                  />
-                  <label class="input-label" for="contact-phone-2"
-                    >Номер телефона</label
-                  >
-                </div>
+                <button
+                  type="button"
+                  class="button-reset button-add js-add-button"
+                >
+                  <span class="text">Добавить еще один контакт</span>
+                </button>
               </div>
             </div>
-
             <button
               type="submit"
               class="button-reset button js-submit-button"

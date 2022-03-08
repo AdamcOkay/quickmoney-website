@@ -300,17 +300,38 @@
     }
   }
 
-  .contact-title {
+  .contact-title-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding-top: 10px;
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 16px;
 
+    .contact-title {
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 16px;
+
+      @media (min-width: $bp-lg) {
+        font-size: 20px;
+        line-height: 30px;
+      }
+    }
+
+    .remove-button {
+      padding: 0;
+      line-height: 0;
+
+      svg {
+        pointer-events: none;
+      }
+
+      &:active {
+        opacity: 0.7;
+      }
+    }
     @media (min-width: $bp-lg) {
       margin-bottom: -15px;
       grid-column: 1 / span 3;
-      font-size: 20px;
-      line-height: 30px;
     }
   }
 
