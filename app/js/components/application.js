@@ -199,11 +199,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
       contacts.forEach((contact, index) => {
         const contactCount = contact.querySelector(".contact-count"),
-          contactName = contact.querySelector('input[type="text"'),
-          nameLabel = contactName.nextElementSibling,
+          contactName = contact.querySelector('input[type="text"]'),
+          contactNameId = contactName.id,
+          nameLabel = contact.querySelector(
+            `.input-label[for=${contactNameId}`
+          ),
           contactSelect = contact.querySelector("select"),
-          contactPhone = contact.querySelector('input[type="tel"'),
-          phoneLabel = contactPhone.nextElementSibling;
+          contactPhone = contact.querySelector('input[type="tel"]'),
+          contactPhoneId = contactPhone.id,
+          phoneLabel = contact.querySelector(
+            `.input-label[for=${contactPhoneId}`
+          );
 
         contactCount.textContent = dictionary[index];
 

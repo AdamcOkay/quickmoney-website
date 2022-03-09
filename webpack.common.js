@@ -40,6 +40,9 @@ module.exports = {
           inject: true,
           template: `./app/${page}.html`,
           filename: `${page}.html`,
+          minify: {
+            removeRedundantAttributes: false, // do not remove type="text"
+          },
         })
     )
   ),
