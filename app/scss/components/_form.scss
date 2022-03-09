@@ -37,19 +37,19 @@
 input {
   display: block;
   width: 100%;
-  padding: 17px 20px 17px 20px;
+  padding: 16px 20px 17px 20px;
   border: none;
   outline: none;
   background: $input-grey;
   border-radius: 5px;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
-  line-height: 16px;
+  line-height: 17px;
   transition: all 0.2s;
 
   &:focus,
   &:valid {
-    padding-top: 24px;
+    padding-top: 23px;
     padding-bottom: 10px;
   }
 
@@ -64,7 +64,14 @@ input {
     }
   }
 }
+.edited-input {
+  padding-top: 23px;
+  padding-bottom: 10px;
 
+  @media (min-width: $bp-lg) {
+    padding-bottom: 11px;
+  }
+}
 .input-label {
   font-size: 15px;
   line-height: 16px;
@@ -246,8 +253,8 @@ input:valid + .input-label {
   color: #000;
   cursor: pointer;
   user-select: none;
-  font-size: 15px;
-  line-height: 16px;
+  font-size: 16px;
+  line-height: 17px;
 
   @media (min-width: $bp-lg) {
     font-size: 18px;
@@ -280,6 +287,7 @@ input:valid + .input-label {
 .select-hide {
   display: none;
 }
+
 input[type="date"] {
   display: block;
   padding: 20px 20px 8px;

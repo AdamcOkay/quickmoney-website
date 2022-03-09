@@ -32,6 +32,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const dateMaskOptions = {
       mask: "00.00.0000",
+      lazy: false,
+      placeholderChar: "_",
     };
 
     const billMaskOptions = {
