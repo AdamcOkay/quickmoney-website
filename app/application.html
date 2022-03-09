@@ -208,7 +208,7 @@
                   <div class="input-col">
                     <div class="input-wrapper">
                       <input
-                        type="text"
+                        type="tel"
                         id="id-num"
                         class="id-num"
                         name="id-num"
@@ -220,10 +220,10 @@
                   <div class="input-col">
                     <div class="input-wrapper">
                       <input
-                        type="date"
+                        type="tel"
                         id="id-exp-date"
                         name="id-exp-date"
-                        class="edited-input"
+                        class="id-exp-date"
                         required
                       />
                       <label class="input-label" for="id-exp-date"
@@ -678,7 +678,14 @@
             </p>
           </div>
           <div class="sum-wrapper content-wrapper">
-            <div class="slider-wrapper">
+            <div
+              class="slider-wrapper js-slider-wrapper"
+              data-step="5000"
+              data-tick-first="50000"
+              data-tick-second="100000"
+              data-min="25000"
+              data-max="145000"
+            >
               <div class="sum-header">
                 <p class="sum-text">Сумма:</p>
                 <p class="sum js-total-sum">2 000 ₸</p>

@@ -5,20 +5,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!pageBody) return;
 
-  const rangeSlider = document.getElementById("slider-non-linear-step");
+  const rangeSlider = document.getElementById("slider-non-linear-step"),
+    sliderWrapper = document.querySelector(".js-slider-wrapper"),
+    sliderStep = parseInt(sliderWrapper.dataset.step),
+    sliderMin = parseInt(sliderWrapper.dataset.min),
+    sliderMax = parseInt(sliderWrapper.dataset.max),
+    sliderTickFirst = parseInt(sliderWrapper.dataset.tickFirst),
+    sliderTickSecond = parseInt(sliderWrapper.dataset.tickSecond);
 
   noUiSlider.create(rangeSlider, {
-    start: [25000],
+    start: [sliderMin],
     connect: [true, false],
     format: {
       to: (v) => v | 0,
       from: (v) => v | 0,
     },
     range: {
-      min: [25000, 5000],
-      "30%": [50000, 5000],
-      "60%": [100000, 5000],
-      max: [145000, 5000],
+      min: [sliderMin, sliderStep],
+      "30%": [sliderTickFirst, sliderStep],
+      "60%": [sliderTickSecond, sliderStep],
+      max: [sliderMax, sliderStep],
     },
     pips: {
       mode: "range",

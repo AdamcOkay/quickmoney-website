@@ -218,6 +218,9 @@ document.addEventListener("DOMContentLoaded", () => {
         contactPhone.name = `contact-phone-${index + 1}`;
         phoneLabel.setAttribute("for", `contact-phone-${index + 1}`);
       });
+
+      console.log(currentStep);
+      listenToInputs(currentStep);
     }
   });
 
@@ -227,6 +230,14 @@ document.addEventListener("DOMContentLoaded", () => {
     currentStepInputs.forEach((input) => {
       let inputsAreValid;
       const nextButton = step.querySelector(".js-step-next");
+
+      inputsAreValid = isValid([...currentStepInputs]);
+
+      if (inputsAreValid) {
+        nextButton.disabled = false;
+      } else {
+        nextButton.disabled = true;
+      }
 
       input.addEventListener("input", () => {
         inputsAreValid = isValid([...currentStepInputs]);
@@ -244,6 +255,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   stepsForm.addEventListener("submit", (event) => {
     event.preventDefault();
+  });
+
+  stepsForm.addEventListener("keydown", (event) => {
+    if (event.keyCode == 13) {
+      event.preventDefault();
+    }
   });
 
   submitButton.addEventListener("click", (event) => {

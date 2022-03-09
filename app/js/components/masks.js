@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const idInput = document.querySelectorAll(".doc-id");
     const idNumInput = document.querySelectorAll(".id-num");
     const smsInput = document.querySelectorAll(".sms-code");
+    const dateInput = document.querySelectorAll(".id-exp-date");
 
     const maskOptions = {
       mask: "+{7} (000) 000-00-00",
@@ -27,6 +28,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const cardMaskOptions = {
       mask: "0000",
+    };
+
+    const dateMaskOptions = {
+      mask: "00.00.0000",
     };
 
     const billMaskOptions = {
@@ -71,6 +76,12 @@ document.addEventListener("DOMContentLoaded", () => {
     smsInput.forEach((input) => {
       if (input) {
         const mask = IMask(input, smsMaskOptions);
+      }
+    });
+
+    dateInput.forEach((input) => {
+      if (input) {
+        const mask = IMask(input, dateMaskOptions);
       }
     });
   };

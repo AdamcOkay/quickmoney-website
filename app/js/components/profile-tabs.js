@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     tabButtons.forEach((btn, index) => {
       btn.classList.remove("tab-button--active");
       tabContent[index].classList.remove("tab-content--active");
+      tabContent[index].classList.remove("tab-content--first");
     });
 
     target.classList.add("tab-button--active");
