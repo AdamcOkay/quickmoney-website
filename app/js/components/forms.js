@@ -22,6 +22,19 @@ document.addEventListener("DOMContentLoaded", () => {
             submitButton.disabled = true;
           }
 
+          if (input.classList.contains("error-input")) {
+            const formLabel = input.nextElementSibling;
+            input.classList.remove("error-input");
+
+            formLabel.textContent = formLabel.dataset.text;
+          }
+
+          if (input.value.length > 0) {
+            input.classList.add("edited-input");
+          } else {
+            input.classList.remove("edited-input");
+          }
+
           if (form.classList.contains("verification-form") && isFormValid) {
             submitButton.textContent = "Подтвердить";
           }
@@ -66,5 +79,28 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     });
+  });
+
+  const loginForm = document.querySelector(".js-login-form");
+
+  if (!loginForm) return;
+
+  loginForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const loginInputs = loginForm.querySelectorAll("input"),
+      loginButton = loginForm.querySelector(".js-submit-button");
+
+    loginInputs.forEach((input) => {
+      const inputLabel = input.nextElementSibling;
+      input.classList.add("error-input");
+
+      if (inputLabel.getAttribute("for") === input.getAttribute("name")) {
+        inputLabel.dataset.text = inputLabel.textContent;
+        inputLabel.textContent = "Неверные данные";
+      }
+    });
+
+    loginButton.disabled = true;
   });
 });

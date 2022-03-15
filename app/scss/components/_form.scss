@@ -85,6 +85,7 @@ input {
 }
 
 .edited-input + .input-label,
+.error-input + .input-label,
 input:focus + .input-label,
 input:valid + .input-label {
   top: 7px;
@@ -97,6 +98,14 @@ input:valid + .input-label {
     font-size: 14px;
     line-height: 15px;
   }
+}
+
+.error-input {
+  color: $error-red;
+}
+
+.error-input + .input-label {
+  color: $error-red;
 }
 
 .click-container {

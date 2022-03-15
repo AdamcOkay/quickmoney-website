@@ -159,6 +159,7 @@ document.addEventListener("DOMContentLoaded", () => {
               type="tel"
               id="contact-phone-${contactCount + 1}"
               name="contact-phone-${contactCount + 1}"
+              pattern="\\\+7 \\\([0-9]{3}\\\) [0-9]{3}-[0-9]{2}-[0-9]{2}"
               class="phone-input"
               required
             />
@@ -252,6 +253,12 @@ document.addEventListener("DOMContentLoaded", () => {
           nextButton.disabled = false;
         } else {
           nextButton.disabled = true;
+        }
+
+        if (input.value.length > 0) {
+          input.classList.add("edited-input");
+        } else {
+          input.classList.remove("edited-input");
         }
       });
     });
