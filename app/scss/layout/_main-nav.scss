@@ -170,15 +170,18 @@
         &:hover {
           color: $primary-yellow;
         }
-      }
-    }
 
-    .lang__item--active {
-      display: block;
-      color: $primary-yellow;
-      padding-right: 10px;
-      margin-right: 10px;
-      border-right: 1px solid rgba(255, 255, 255, 0.5);
+        &:first-child {
+          display: block;
+          padding-right: 10px;
+          margin-right: 10px;
+          border-right: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        &--active {
+          color: $primary-yellow;
+        }
+      }
     }
 
     .login-button,

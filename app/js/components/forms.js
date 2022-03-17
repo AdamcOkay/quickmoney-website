@@ -23,10 +23,11 @@ document.addEventListener("DOMContentLoaded", () => {
           }
 
           if (input.classList.contains("error-input")) {
-            const formLabel = input.nextElementSibling;
-            input.classList.remove("error-input");
+            const inputWrapper = input.parentElement,
+              errorMessage = inputWrapper.nextElementSibling;
 
-            formLabel.textContent = formLabel.dataset.text;
+            input.classList.remove("error-input");
+            errorMessage.remove();
           }
 
           if (input.value.length > 0) {
@@ -92,13 +93,16 @@ document.addEventListener("DOMContentLoaded", () => {
       loginButton = loginForm.querySelector(".js-submit-button");
 
     loginInputs.forEach((input) => {
-      const inputLabel = input.nextElementSibling;
-      input.classList.add("error-input");
+      const inputWrapper = input.parentNode,
+        prevErrorMessage = inputWrapper.nextElementSibling;
 
-      if (inputLabel.getAttribute("for") === input.getAttribute("name")) {
-        inputLabel.dataset.text = inputLabel.textContent;
-        inputLabel.textContent = "Неверные данные";
+      // удаляем существующий текст ошибки, если он есть
+      if (prevErrorMessage) {
+        prevErrorMessage.remove();
       }
+      const errorMessage = `<p class="error-message">Текст ошибки снизу инпута. Текст может быть длинным</p>`;
+      inputWrapper.insertAdjacentHTML("afterend", errorMessage);
+      input.classList.add("error-input");
     });
 
     loginButton.disabled = true;
