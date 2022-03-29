@@ -48,6 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const target = e.target;
 
         closeAllSelect(target);
+        target.nextSibling.scrollTo({ top: 0 });
         target.nextSibling.classList.toggle("select-hide");
         target.classList.toggle("select-arrow-active");
       });

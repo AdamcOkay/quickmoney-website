@@ -47,8 +47,7 @@ input {
   line-height: 16px;
   transition: all 0.2s;
 
-  &:focus,
-  &:valid {
+  &:focus {
     padding-top: 24px;
     padding-bottom: 10px;
   }
@@ -58,8 +57,7 @@ input {
     font-size: 18px;
     line-height: 20px;
 
-    &:focus,
-    &:valid {
+    &:focus {
       padding-bottom: 11px;
     }
   }
@@ -85,8 +83,7 @@ input {
 }
 
 .edited-input + .input-label,
-input:focus + .input-label,
-input:valid + .input-label {
+input:focus + .input-label {
   top: 7px;
   transform: none;
   font-size: 10px;
@@ -246,11 +243,6 @@ input:valid + .input-label {
 
 .select-selected {
   padding: 17px 20px;
-  height: 50px;
-
-  @media (min-width: $bp-lg) {
-    height: 55px;
-  }
 }
 
 .select-items div,
@@ -274,13 +266,16 @@ input:valid + .input-label {
   margin-top: -1px;
   border-radius: 0 0 5px 5px;
   box-shadow: 0px 40px 40px rgba(0, 0, 0, 0.15);
+  overflow-y: auto;
+  max-height: 204px;
   z-index: 99;
 
   @media (min-width: $bp-lg) {
     width: 100%;
+    max-height: 216px;
     margin: 0;
     position: absolute;
-    top: 54px;
+    top: 100%;
   }
 }
 
