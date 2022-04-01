@@ -1,5 +1,7 @@
 .application-page,
 .id-page {
+  overflow: visible;
+
   .info-container {
     &--disabled {
       display: none;
