@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       for (let i = 1; i < selectElement.length; i++) {
         const selectOption = document.createElement("DIV");
+        selectOption.classList.add("js-select-item");
         selectOption.innerHTML = selectElement.options[i].innerHTML;
 
         selectOption.addEventListener("click", (e) => {
@@ -57,6 +58,34 @@ document.addEventListener("DOMContentLoaded", () => {
       selectItemsWrapper.appendChild(selectItems);
       customSelect.appendChild(selectItemsWrapper);
 
+      const searchInput = customSelect.querySelector(".js-select-search"),
+        resetBtn = customSelect.querySelector(".js-search-reset"),
+        searchIcon = customSelect.querySelector(".search-icon"),
+        resetIcon = customSelect.querySelector(".reset-icon");
+
+      searchInput.addEventListener("input", () => {
+        if (searchInput.value.length > 0) {
+          resetBtn.disabled = false;
+          searchIcon.classList.add("icon-hidden");
+          resetIcon.classList.remove("icon-hidden");
+        } else {
+          resetBtn.disabled = true;
+          resetIcon.classList.add("icon-hidden");
+          searchIcon.classList.remove("icon-hidden");
+        }
+
+        searchItems(searchInput);
+      });
+
+      resetBtn.addEventListener("click", () => {
+        searchInput.value = "";
+        resetBtn.disabled = true;
+        resetIcon.classList.add("icon-hidden");
+        searchIcon.classList.remove("icon-hidden");
+
+        searchItems(searchInput);
+      });
+
       selectedOption.addEventListener("click", (e) => {
         e.stopPropagation();
         const target = e.target;
@@ -67,6 +96,21 @@ document.addEventListener("DOMContentLoaded", () => {
         target.classList.toggle("select-arrow-active");
       });
     });
+
+    const searchItems = (input) => {
+      const filterInputValue = input.value.toUpperCase(),
+        selectItems = document.querySelectorAll(".js-select-item");
+
+      for (let i = 0; i < selectItems.length; i++) {
+        const txtValue = selectItems[i].textContent || selectItems[i].innerText;
+
+        if (txtValue.toUpperCase().indexOf(filterInputValue) > -1) {
+          selectItems[i].style.display = "";
+        } else {
+          selectItems[i].style.display = "none";
+        }
+      }
+    };
 
     const closeAllSelect = (elmnt) => {
       const selectedOption = document.querySelectorAll(".select-selected"),
