@@ -234,10 +234,13 @@ input:focus + .input-label {
   position: relative;
   background: #fff;
   border-radius: 5px 5px 0 0;
-  box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.15);
 
   &::after {
     transform: translateY(-50%) scale(-1);
+  }
+
+  @media (min-width: $bp-lg) {
+    box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.15);
   }
 }
 
@@ -259,23 +262,83 @@ input:focus + .input-label {
   }
 }
 
-.select-items {
-  position: relative;
-  background-color: #fff;
-  padding: 0 20px;
+.select-items-wrapper {
+  padding: 0 15px 10px;
   margin-top: -1px;
+  background-color: #fff;
   border-radius: 0 0 5px 5px;
   box-shadow: 0px 40px 40px rgba(0, 0, 0, 0.15);
-  overflow-y: auto;
-  max-height: 204px;
   z-index: 99;
 
   @media (min-width: $bp-lg) {
     width: 100%;
-    max-height: 216px;
     margin: 0;
     position: absolute;
     top: 100%;
+  }
+}
+
+.select-search {
+  display: flex;
+  align-items: center;
+  background: $input-grey;
+  padding: 15px 20px;
+  margin: 15px 0;
+
+  input {
+    padding: 0;
+    font-size: 15px;
+    line-height: 16px;
+
+    &::placeholder {
+      color: #000;
+      font-size: 15px;
+      line-height: 16px;
+    }
+
+    &:focus {
+      &::placeholder {
+        opacity: 0;
+      }
+    }
+  }
+
+  button {
+    display: block;
+    flex-basis: 20px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    height: 20px;
+    padding: 0;
+  }
+
+  .icon-hidden {
+    display: none;
+  }
+}
+
+.select-items {
+  position: relative;
+  width: 100%;
+  overflow-y: auto;
+  max-height: 204px;
+
+  &::-webkit-scrollbar {
+    width: 3px;
+  }
+
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px $input-grey;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $primary-yellow;
+    border-radius: 10px;
+  }
+
+  @media (min-width: $bp-lg) {
+    max-height: 216px;
   }
 }
 

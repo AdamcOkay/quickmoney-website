@@ -1,49 +1,63 @@
+import selectSearchTemplate from "./select-search-template";
+
 document.addEventListener("DOMContentLoaded", () => {
   window.findSelects = (select = false) => {
-    let x, i, j, l, ll, selElmnt, a, b, c;
+    const customSelects = select
+      ? select
+      : document.querySelectorAll(".custom-select");
 
-    x = select ? select : document.getElementsByClassName("custom-select");
-    l = select ? 1 : x.length;
-    for (i = 0; i < l; i++) {
-      selElmnt = x[i].getElementsByTagName("select")[0];
-      ll = selElmnt.length;
+    customSelects.forEach((customSelect) => {
+      const selectElement = customSelect.querySelector("select");
 
-      a = document.createElement("DIV");
-      a.setAttribute("class", "select-selected");
-      a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
-      x[i].appendChild(a);
+      const selectedOption = document.createElement("DIV");
 
-      b = document.createElement("DIV");
-      b.setAttribute("class", "select-items select-hide");
-      for (j = 1; j < ll; j++) {
-        c = document.createElement("DIV");
-        c.innerHTML = selElmnt.options[j].innerHTML;
-        c.addEventListener("click", (e) => {
+      selectedOption.classList.add("select-selected", "selected-placeholder");
+      selectedOption.innerHTML =
+        selectElement.options[selectElement.selectedIndex].innerHTML;
+
+      customSelect.appendChild(selectedOption);
+
+      const selectItemsWrapper = document.createElement("DIV");
+      selectItemsWrapper.classList.add("select-items-wrapper", "select-hide");
+
+      const selectSearch = selectSearchTemplate;
+      selectItemsWrapper.insertAdjacentHTML("afterbegin", selectSearch);
+
+      const selectItems = document.createElement("DIV");
+      selectItems.classList.add("select-items");
+
+      for (let i = 1; i < selectElement.length; i++) {
+        const selectOption = document.createElement("DIV");
+        selectOption.innerHTML = selectElement.options[i].innerHTML;
+
+        selectOption.addEventListener("click", (e) => {
+          console.log("asd");
           const target = e.target;
-          let y, i, k, s, h, sl, yl;
 
-          s = target.parentNode.parentNode.getElementsByTagName("select")[0];
-          sl = s.length;
-          h = target.parentNode.previousSibling;
-          for (i = 0; i < sl; i++) {
-            if (s.options[i].innerHTML == target.innerHTML) {
-              s.selectedIndex = i;
-              h.innerHTML = target.innerHTML;
-              y = target.parentNode.getElementsByClassName("same-as-selected");
-              yl = y.length;
-              for (k = 0; k < yl; k++) {
-                y[k].removeAttribute("class");
+          for (let j = 0; j < selectElement.length; j++) {
+            if (target.innerHTML === selectElement.options[j].innerHTML) {
+              selectElement.selectedIndex = j;
+              selectedOption.innerHTML = target.innerHTML;
+
+              const sameAsSelected =
+                selectItems.querySelectorAll(".same-as-selected");
+              for (let k = 0; k < sameAsSelected.length; k++) {
+                sameAsSelected[k].removeAttribute("class");
               }
               target.setAttribute("class", "same-as-selected");
               break;
             }
           }
-          h.click();
+          selectedOption.click();
         });
-        b.appendChild(c);
+
+        selectItems.appendChild(selectOption);
       }
-      x[i].appendChild(b);
-      a.addEventListener("click", (e) => {
+
+      selectItemsWrapper.appendChild(selectItems);
+      customSelect.appendChild(selectItemsWrapper);
+
+      selectedOption.addEventListener("click", (e) => {
         e.stopPropagation();
         const target = e.target;
 
@@ -52,34 +66,37 @@ document.addEventListener("DOMContentLoaded", () => {
         target.nextSibling.classList.toggle("select-hide");
         target.classList.toggle("select-arrow-active");
       });
-    }
+    });
 
     const closeAllSelect = (elmnt) => {
-      let x,
-        y,
-        i,
-        xl,
-        yl,
-        arrNo = [];
-      x = document.getElementsByClassName("select-items");
-      y = document.getElementsByClassName("select-selected");
-      xl = x.length;
-      yl = y.length;
-      for (i = 0; i < yl; i++) {
-        if (elmnt == y[i]) {
+      const selectedOption = document.querySelectorAll(".select-selected"),
+        selectItemsWrapper = document.querySelectorAll(".select-items-wrapper");
+
+      const arrNo = [];
+      for (let i = 0; i < selectedOption.length; i++) {
+        if (elmnt === selectedOption[i]) {
           arrNo.push(i);
         } else {
-          y[i].classList.remove("select-arrow-active");
+          selectedOption[i].classList.remove("select-arrow-active");
         }
       }
-      for (i = 0; i < xl; i++) {
+
+      for (let i = 0; i < selectItemsWrapper.length; i++) {
         if (arrNo.indexOf(i)) {
-          x[i].classList.add("select-hide");
+          selectItemsWrapper[i].classList.add("select-hide");
         }
       }
     };
 
-    document.addEventListener("click", closeAllSelect);
+    document.addEventListener("click", (e) => {
+      const selectSearch = e.target.closest(".select-search");
+
+      if (selectSearch) {
+        return;
+      }
+
+      closeAllSelect(e.target);
+    });
   };
 
   findSelects();
