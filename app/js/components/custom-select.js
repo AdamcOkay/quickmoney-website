@@ -6,8 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
       ? select
       : document.querySelectorAll(".custom-select");
 
-    customSelects.forEach((customSelect) => {
-      const selectElement = customSelect.querySelector("select");
+    for (let index = 0; index < customSelects.length; index++) {
+      const selectElement = customSelects[index].querySelector("select");
 
       const selectedOption = document.createElement("DIV");
 
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
       selectedOption.innerHTML =
         selectElement.options[selectElement.selectedIndex].innerHTML;
 
-      customSelect.appendChild(selectedOption);
+      customSelects[index].appendChild(selectedOption);
 
       const selectItemsWrapper = document.createElement("DIV");
       selectItemsWrapper.classList.add("select-items-wrapper", "select-hide");
@@ -43,9 +43,9 @@ document.addEventListener("DOMContentLoaded", () => {
               const sameAsSelected =
                 selectItems.querySelectorAll(".same-as-selected");
               for (let k = 0; k < sameAsSelected.length; k++) {
-                sameAsSelected[k].removeAttribute("class");
+                sameAsSelected[k].classList.remove("same-as-selected");
               }
-              target.setAttribute("class", "same-as-selected");
+              target.classList.add("same-as-selected", "js-select-item");
               break;
             }
           }
@@ -56,12 +56,13 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       selectItemsWrapper.appendChild(selectItems);
-      customSelect.appendChild(selectItemsWrapper);
+      customSelects[index].appendChild(selectItemsWrapper);
 
-      const searchInput = customSelect.querySelector(".js-select-search"),
-        resetBtn = customSelect.querySelector(".js-search-reset"),
-        searchIcon = customSelect.querySelector(".search-icon"),
-        resetIcon = customSelect.querySelector(".reset-icon");
+      const searchInput =
+          customSelects[index].querySelector(".js-select-search"),
+        resetBtn = customSelects[index].querySelector(".js-search-reset"),
+        searchIcon = customSelects[index].querySelector(".search-icon"),
+        resetIcon = customSelects[index].querySelector(".reset-icon");
 
       searchInput.addEventListener("input", () => {
         if (searchInput.value.length > 0) {
@@ -95,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
         target.nextSibling.classList.toggle("select-hide");
         target.classList.toggle("select-arrow-active");
       });
-    });
+    }
 
     const searchItems = (input) => {
       const filterInputValue = input.value.toUpperCase(),
