@@ -19,6 +19,10 @@
     position: relative;
     display: flex;
     padding: 17px 0;
+
+    * {
+      pointer-events: none;
+    }
   }
 
   .choosen-item {
@@ -39,6 +43,14 @@
 
   .items-list {
     display: none;
+
+    .item {
+      border-top: 1px solid rgba(#000, 0.05);
+
+      &:hover {
+        color: $primary-pink;
+      }
+    }
   }
 
   .item-icon {

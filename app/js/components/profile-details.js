@@ -9,10 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     addContent = detailsContainer.querySelector(".js-add"),
     addContentInputs = [...addContent.querySelectorAll("input")],
     editContent = detailsContainer.querySelector(".js-edit"),
-    editContentInputs = [...editContent.querySelectorAll("input")],
-    backButtons = detailsContainer.querySelectorAll(".js-go-back"),
-    saveButton = detailsContainer.querySelector(".button-save"),
-    saveEditButton = detailsContainer.querySelector(".button-save-edit");
+    backButtons = detailsContainer.querySelectorAll(".js-go-back");
 
   if (addButton) {
     addButton.addEventListener("click", () => {
@@ -47,7 +44,6 @@ document.addEventListener("DOMContentLoaded", () => {
           input.checkValidity()
         );
 
-        console.log(isFormValid);
         if (isFormValid) {
           addContent.classList.add("add-filled");
         } else {

@@ -300,6 +300,9 @@
                     </div>
                   </div>
                 </div>
+                <div class="clarification-row">
+                  <p>* обязательно для заполнения</p>
+                </div>
                 <div class="input-row buttons-row">
                   <div class="input-col next-col">
                     <button
@@ -399,6 +402,9 @@
                       >
                     </div>
                   </div>
+                </div>
+                <div class="clarification-row">
+                  <p>* обязательно для заполнения</p>
                 </div>
                 <div class="input-row buttons-row">
                   <div class="input-col next-col">
@@ -519,6 +525,9 @@
                       </label>
                     </div>
                   </div>
+                </div>
+                <div class="clarification-row">
+                  <p>* обязательно для заполнения</p>
                 </div>
                 <div class="input-row buttons-row">
                   <div class="input-col next-col">
@@ -683,6 +692,9 @@
                     </button>
                   </div>
                 </div>
+                <div class="clarification-row">
+                  <p>* обязательно для заполнения</p>
+                </div>
                 <div class="input-row buttons-row">
                   <div class="input-col next-col">
                     <button
@@ -733,6 +745,152 @@
             </p>
           </div>
           <div class="sum-wrapper content-wrapper">
+            <div class="loan-info">
+              <p class="loan-info__text">
+                Дата погашения:<span class="date">10 октября 2021</span>
+              </p>
+              <p class="loan-info__text">
+                Бонус:<span class="bonus">15 дней бесплатно</span>
+              </p>
+              <p class="loan-info__text">
+                Процент после 16 дней:<span class="percent">10%</span>
+              </p>
+              <p class="loan-info__text">
+                Сумма погашения:<span class="final-sum">22 800 ₸</span>
+              </p>
+            </div>
+            <div class="requisites">
+              <h3 class="form-title">Куда поступят деньги:</h3>
+              <div class="radio-wrapper">
+                <label class="radio-container click-container"
+                  >Карта банка
+                  <input type="radio" checked="checked" name="days" />
+                  <span class="checkmark"></span>
+                </label>
+                <label class="radio-container click-container"
+                  >Расчетный счёт
+                  <input type="radio" name="days" />
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+
+              <button
+                type="button"
+                class="button-reset button-add border-button js-call-modal js-add-requisites"
+                data-call="addModal"
+              >
+                Добавить карту
+              </button>
+
+              <div class="requisites-body js-requisites" data-requisites="card">
+                <div class="input-grid js-code-row">
+                  <input
+                    type="text"
+                    pattern="\d*"
+                    minlength="4"
+                    maxlength="4"
+                    class="card-input"
+                    required
+                  />
+                  <input
+                    type="text"
+                    pattern="\d*"
+                    minlength="4"
+                    maxlength="4"
+                    class="card-input"
+                    required
+                  />
+                  <input
+                    type="text"
+                    pattern="\d*"
+                    minlength="4"
+                    maxlength="4"
+                    class="card-input"
+                    required
+                  />
+                  <input
+                    type="text"
+                    pattern="\d*"
+                    minlength="4"
+                    maxlength="4"
+                    class="card-input"
+                    required
+                  />
+                </div>
+                <div class="logos">
+                  <div class="service">
+                    <img
+                      src="../assets/icons/profileIcons/visa.png"
+                      alt="visa"
+                    />
+                  </div>
+                  <div class="bank">
+                    <img
+                      src="../assets/icons/profileIcons/kaspi.png"
+                      alt="kaspi"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="requisites-body bill-body js-requisites"
+                data-requisites="bill"
+              >
+                <input type="text" maxlength="24" class="bill-input" />
+                <div class="logos">
+                  <div class="bank">
+                    <img
+                      src="../assets/icons/profileIcons/kaspi.png"
+                      alt="kaspi"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="dropdown">
+                <p class="dropdown-label">Сохраненные счета:</p>
+                <div class="choosen-item">
+                  <div class="item-icon">
+                    <img
+                      src="../assets/icons/profileIcons/kaspi-dropdown.png"
+                      alt="kaspi"
+                    />
+                  </div>
+                  <p class="item-text">**** **** **** 5468</p>
+                </div>
+
+                <div class="items-list">
+                  <div class="item">
+                    <div class="item-icon">
+                      <img
+                        src="../assets/icons/profileIcons/kaspi-dropdown.png"
+                        alt="kaspi"
+                      />
+                    </div>
+                    <p class="item-text">**** **** **** 5468</p>
+                  </div>
+                  <div class="item">
+                    <div class="item-icon">
+                      <img
+                        src="../assets/icons/profileIcons/kaspi-dropdown.png"
+                        alt="kaspi"
+                      />
+                    </div>
+                    <p class="item-text">**** **** **** 2145</p>
+                  </div>
+                  <div class="item">
+                    <div class="item-icon">
+                      <img
+                        src="../assets/icons/profileIcons/kaspi-dropdown.png"
+                        alt="kaspi"
+                      />
+                    </div>
+                    <p class="item-text">**** **** **** 3566</p>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div
               class="slider-wrapper js-slider-wrapper"
               data-step="5000"
@@ -747,20 +905,6 @@
               </div>
 
               <div id="slider-non-linear-step"></div>
-            </div>
-            <div class="loan-info">
-              <p class="loan-info__text">
-                Дата погашения:<span class="date">10 октября 2021</span>
-              </p>
-              <p class="loan-info__text">
-                Бонус:<span class="bonus">15 дней бесплатно</span>
-              </p>
-              <p class="loan-info__text">
-                Процент после 16 дней:<span class="percent">10%</span>
-              </p>
-              <p class="loan-info__text">
-                Сумма погашения:<span class="final-sum">22 800 ₸</span>
-              </p>
             </div>
             <div class="button-wrapper">
               <button
@@ -817,5 +961,38 @@
       </div>
     </main>
     <!-- MAIN END -->
+    <!-- MODALS START -->
+    <div
+      class="qm-modal requisites-modal js-modal"
+      data-modal="addModal"
+      data-modal-setting="close"
+    >
+      <div class="qm-modal-content">
+        <button class="button-reset close-modal" data-modal-setting="close">
+          <img src="../assets/icons/contentIcons/close.svg" alt="закрыть" />
+        </button>
+        <div class="qm-modal-body">
+          <h2>Подтверждение номера</h2>
+
+          <div class="requisites-body bill-body js-requisites">
+            <input type="text" maxlength="24" class="bill-input" />
+            <div class="logos">
+              <div class="bank">
+                <img src="../assets/icons/profileIcons/kaspi.png" alt="kaspi" />
+              </div>
+            </div>
+          </div>
+          <button
+            type="button"
+            class="button-reset button"
+            data-modal-setting="close"
+          >
+            сохранить
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODALS END -->
   </body>
 </html>

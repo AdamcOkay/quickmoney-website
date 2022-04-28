@@ -368,6 +368,14 @@
     }
   }
 
+  .clarification-row {
+    padding: 15px 0 30px;
+    border-top: 1px solid rgba(#000, 0.05);
+    font-weight: 500;
+    font-size: 12px;
+    color: #b5b5b5;
+  }
+
   .radio-col {
     @media (min-width: $bp-lg) {
       grid-column: 1 / span 3;
@@ -494,9 +502,7 @@
   }
 
   .sum-wrapper {
-    display: grid;
-    grid-template-rows: 72px 1fr 72px;
-    padding: 30px 0 0 0;
+    padding: 20px 0 0 0;
     min-height: 470px;
 
     @media (min-width: $bp-tab) {
@@ -504,6 +510,7 @@
       min-height: 445px;
       max-width: 550px;
       margin: 0 auto;
+      padding: 40px 0;
     }
   }
 
@@ -538,7 +545,7 @@
 
   .slider-wrapper,
   .loan-info {
-    padding: 0 25px;
+    padding: 0 20px;
 
     @media (min-width: $bp-tab) {
       padding: 0 50px;
@@ -546,8 +553,6 @@
   }
 
   .loan-info {
-    padding-top: 40px;
-    text-align: center;
     opacity: 0.5;
   }
 
@@ -567,9 +572,43 @@
     }
   }
 
+  .requisites {
+    border-top: 1px solid rgba(#000, 0.05);
+    padding: 20px 20px 30px;
+
+    .form-title {
+      padding: 0;
+    }
+
+    .radio-wrapper {
+      padding: 0;
+      margin-bottom: 20px;
+    }
+
+    .requisites-body {
+      margin-bottom: 0;
+    }
+
+    .dropdown {
+      margin: 0 auto;
+    }
+
+    .button-add {
+      max-width: 330px;
+      margin: 0 auto;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    @media (min-width: $bp-tab) {
+      padding: 20px 50px 30px;
+    }
+  }
+
   .button-wrapper {
     position: relative;
     padding: 10px 15px;
+    margin-top: 55px;
 
     &::before {
       content: "";
@@ -585,6 +624,7 @@
 
     @media (min-width: $bp-tab) {
       padding: 20px 0 0 0;
+      margin-top: 40px;
 
       &::before {
         display: none;

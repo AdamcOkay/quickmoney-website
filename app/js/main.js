@@ -39,3 +39,4 @@ import "./components/application";
 import "./components/id";
 import "./components/profile-tabs";
 import "./components/profile-details";
+import "./components/requisites";

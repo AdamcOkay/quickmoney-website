@@ -1,12 +1,11 @@
 import noUiSlider from "nouislider";
 
 document.addEventListener("DOMContentLoaded", () => {
-  const pageBody = document.querySelector(".application-page");
+  const rangeSlider = document.getElementById("slider-non-linear-step");
 
-  if (!pageBody) return;
+  if (!rangeSlider) return;
 
-  const rangeSlider = document.getElementById("slider-non-linear-step"),
-    sliderWrapper = document.querySelector(".js-slider-wrapper"),
+  const sliderWrapper = document.querySelector(".js-slider-wrapper"),
     sliderStep = parseInt(sliderWrapper.dataset.step),
     sliderMin = parseInt(sliderWrapper.dataset.min),
     sliderMax = parseInt(sliderWrapper.dataset.max),

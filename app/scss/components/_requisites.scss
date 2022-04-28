@@ -1,0 +1,90 @@
+.requisites-body {
+  position: relative;
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto 20px;
+  border: 1px solid $input-grey;
+  border-radius: 10px;
+
+  .input-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  input {
+    padding: 10px;
+    text-align: center;
+
+    &:read-only {
+      cursor: default;
+    }
+  }
+
+  .logos {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    opacity: 0;
+
+    div {
+      line-height: 0;
+    }
+
+    .service {
+      max-width: 62px;
+      margin-right: 20px;
+    }
+
+    .bank {
+      max-width: 50px;
+    }
+  }
+
+  .edit-button {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 19px;
+  }
+
+  &--filled {
+    .logos {
+      opacity: 1;
+    }
+  }
+
+  @media (min-width: $bp-md) {
+    margin-bottom: 40px;
+  }
+}
+
+.bill-body {
+  display: grid;
+  grid-template-columns: 1fr 50px;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 10px;
+
+  input {
+    padding: 10px 15px;
+    height: 36px;
+    text-align: left;
+    text-transform: uppercase;
+  }
+
+  .edit-button {
+    padding-right: 5px;
+    position: relative;
+    right: unset;
+    bottom: unset;
+    grid-column: 1 / span 2;
+    grid-row: 2 / 2;
+    text-align: right;
+  }
+}

@@ -54,14 +54,30 @@ document.addEventListener("DOMContentLoaded", () => {
         choosenItem = dropdown.querySelector(".choosen-item"),
         item = target.closest(".item");
 
-      dropdown.classList.add("dropdown--active");
-      if (target !== item) return;
+      if (target.closest(".choosen-item")) {
+        if (dropdown.classList.contains("dropdown--active")) {
+          dropdown.classList.remove("dropdown--active");
+        } else {
+          dropdown.classList.add("dropdown--active");
+        }
+      }
 
-      choosenItem.innerHTML = item.innerHTML;
-      dropdown.classList.remove("dropdown--active");
+      if (target === item) {
+        choosenItem.innerHTML = item.innerHTML;
+        dropdown.classList.remove("dropdown--active");
+      }
     });
   });
 
+  document.addEventListener("click", (e) => {
+    const dropdown = e.target.closest(".dropdown");
+
+    if (!dropdown) {
+      dropdowns.forEach((dropdown) => {
+        dropdown.classList.remove("dropdown--active");
+      });
+    }
+  });
   const codeRows = document.querySelectorAll(".js-code-row");
 
   codeRows.forEach((row) => {

@@ -94,6 +94,110 @@
     }
   }
 
+  .slider-wrapper {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px 25px 30px;
+    margin-bottom: 30px;
+    color: #000;
+
+    .sum-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .sum-text {
+      font-size: 14px;
+      line-height: 17px;
+    }
+
+    .sum {
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 24px;
+    }
+
+    .slider-footer {
+      padding-top: 20px;
+    }
+
+    .calculated {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 0 25px;
+      font-size: 14px;
+      line-height: 17px;
+
+      &-sum {
+        font-weight: 700;
+        margin-left: 10px;
+      }
+    }
+
+    @media (min-width: $bp-tab) {
+      padding: 30px 35px;
+
+      .noUi-target {
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .noUi-horizontal .noUi-handle {
+        width: 30px;
+        height: 30px;
+      }
+
+      .noUi-horizontal .noUi-pips-horizontal {
+        top: 30px;
+      }
+
+      .sum-header {
+        align-items: flex-end;
+        margin-bottom: 20px;
+      }
+
+      .sum-text {
+        font-size: 18px;
+        line-height: 20px;
+      }
+
+      .sum {
+        font-size: 30px;
+        line-height: 30px;
+      }
+
+      .slider-footer {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding-top: 30px;
+      }
+
+      .calculated {
+        margin: 0 20px 0 0;
+        flex-direction: column;
+        align-items: flex-end;
+        font-size: 12px;
+        line-height: 15px;
+
+        &-sum {
+          font-size: 16px;
+          line-height: 20px;
+        }
+      }
+
+      .button {
+        padding: 18px 30px;
+        font-size: 15px;
+        line-height: 16px;
+      }
+    }
+  }
+
   .info-block {
     grid-area: info;
   }
@@ -122,15 +226,16 @@
     }
 
     @media (min-width: $bp-md) {
-      margin-bottom: 40px;
+      display: flex;
 
-      .text {
-        font-size: 20px;
+      &__item:first-of-type {
+        margin-bottom: 0;
       }
     }
   }
 
   .visual {
+    align-self: flex-end;
     grid-area: visual;
     margin-top: 25px;
     max-width: 360px;
@@ -138,6 +243,7 @@
     img {
       vertical-align: bottom;
     }
+
     @media (min-width: $bp-md) {
       max-width: 600px;
       margin-top: 0;
