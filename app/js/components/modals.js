@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  const callButtons = document.querySelectorAll(".js-call-modal");
+  const callButtons = document.querySelectorAll("[data-call]");
 
   callButtons.forEach((button) => {
     button.addEventListener("click", () => {

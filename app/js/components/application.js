@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "Пятый",
     "Шестой",
   ];
+
   stepsForm.addEventListener("click", (e) => {
     const target = e.target;
 
@@ -310,4 +311,79 @@ document.addEventListener("DOMContentLoaded", () => {
       setProgress(i);
     }
   };
+
+  const requisitesRadios = document.querySelectorAll(".js-requisites-radio"),
+    requisitesContainers = document.querySelectorAll(
+      ".js-requisites-container"
+    ),
+    addRequisitesModal = document.querySelector(".js-requisites-modal"),
+    addRequisitesButtons = document.querySelectorAll(".js-add-requisites");
+
+  requisitesRadios.forEach((radio) => {
+    radio.addEventListener("click", () => {
+      addRequisitesButtons.forEach((btn) => {
+        btn.classList.add("hidden-element");
+
+        if (radio.dataset.show === btn.dataset.add) {
+          btn.classList.remove("hidden-element");
+        }
+      });
+
+      requisitesContainers.forEach((container) => {
+        container.classList.add("hidden-element");
+
+        const requisites = container.querySelectorAll("[data-requisites]");
+
+        requisites.forEach((requisite) => {
+          requisite.classList.add("hidden-element");
+        });
+
+        const containerInputs = container.querySelectorAll("input");
+
+        containerInputs.forEach((input) => {
+          input.disabled = true;
+        });
+
+        if (radio.dataset.show === container.dataset.container) {
+          container.classList.remove("hidden-element");
+
+          containerInputs.forEach((input) => {
+            input.disabled = false;
+          });
+        }
+      });
+
+      const modalRequisites =
+        addRequisitesModal.querySelectorAll(".js-requisites");
+
+      modalRequisites.forEach((requisite) => {
+        requisite.classList.add("hidden-element");
+        if (radio.dataset.show === requisite.dataset.requisites) {
+          requisite.classList.remove("hidden-element");
+        }
+      });
+    });
+  });
+
+  addRequisitesButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      btn.classList.add("hidden-element");
+
+      requisitesContainers.forEach((container) => {
+        const requisites = container.querySelectorAll("[data-requisites]");
+
+        if (btn.dataset.add !== container.dataset.container) {
+          requisites.forEach((requisite) => {
+            requisite.classList.add("hidden-element");
+          });
+        }
+
+        if (btn.dataset.add === container.dataset.container) {
+          requisites.forEach((requisite) => {
+            requisite.classList.remove("hidden-element");
+          });
+        }
+      });
+    });
+  });
 });

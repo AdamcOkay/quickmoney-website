@@ -32,7 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
         selectOption.innerHTML = selectElement.options[i].innerHTML;
 
         selectOption.addEventListener("click", (e) => {
-          console.log("asd");
           const target = e.target;
 
           for (let j = 0; j < selectElement.length; j++) {

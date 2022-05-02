@@ -21,6 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
     target.classList.add("tab-button--active");
     tabControls.classList.add("tab-controls--hidden");
     calledTab.classList.add("tab-content--active");
+
+    listenToInputs();
   };
 
   goBackButtons.forEach((btn) => {
@@ -41,6 +43,59 @@ document.addEventListener("DOMContentLoaded", () => {
     ),
     dictionary = ["Первый", "Второй", "Третий", "Четвертый", "Пятый", "Шестой"];
 
+  const isValid = (inputArray) => {
+    const allValid = inputArray.every((input) => input.checkValidity());
+
+    return allValid;
+  };
+
+  const listenToInputs = () => {
+    const activeTab = document.querySelector(".tab-content--active"),
+      inputs = activeTab.querySelectorAll("input"),
+      selects = activeTab.querySelectorAll("select"),
+      selectItems = activeTab.querySelectorAll(".js-select-item"),
+      submitButton = activeTab.querySelector(".js-submit-button");
+
+    let inputsAreValid = isValid([...inputs]);
+    let selectsAreValid = isValid([...selects]);
+
+    inputs.forEach((input) => {
+      if (inputsAreValid && selectsAreValid) {
+        submitButton.disabled = false;
+      } else {
+        submitButton.disabled = true;
+      }
+
+      input.addEventListener("input", () => {
+        inputsAreValid = isValid([...inputs]);
+
+        if (inputsAreValid && selectsAreValid) {
+          submitButton.disabled = false;
+        } else {
+          submitButton.disabled = true;
+        }
+
+        if (input.value.length > 0) {
+          input.classList.add("edited-input");
+        } else {
+          input.classList.remove("edited-input");
+        }
+      });
+    });
+
+    selectItems.forEach((select) => {
+      select.addEventListener("click", () => {
+        let selectsAreValid = isValid([...selects]);
+
+        if (inputsAreValid && selectsAreValid) {
+          submitButton.disabled = false;
+        } else {
+          submitButton.disabled = true;
+        }
+      });
+    });
+  };
+  listenToInputs();
   contactsTab.addEventListener("click", (e) => {
     const target = e.target,
       addContactButton = target.closest(".js-add-button"),
@@ -94,8 +149,8 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="custom-select added-select">
               <select name="contact-who-${contactCount + 1}" id="contact-who-${
           contactCount + 1
-        }">
-                <option value="0">Кем приходится</option>
+        }" required>
+                <option value="" disabled selected>Кем приходится</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -135,6 +190,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       addMasks();
       findSelects(addedSelect);
+      listenToInputs();
       addedSelect[0].classList.remove("added-select");
     }
 
@@ -175,6 +231,7 @@ document.addEventListener("DOMContentLoaded", () => {
         contactPhone.name = `contact-phone-${index + 1}`;
         phoneLabel.setAttribute("for", `contact-phone-${index + 1}`);
       });
+      listenToInputs();
     }
   });
 });

@@ -604,7 +604,11 @@
                     <div class="input-col">
                       <div class="input-wrapper">
                         <div class="custom-select">
-                          <select name="contact-who-1" id="contact-who-1">
+                          <select
+                            name="contact-who-1"
+                            id="contact-who-1"
+                            required
+                          >
                             <option value="0">Кем приходится</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -653,7 +657,11 @@
                     <div class="input-col">
                       <div class="input-wrapper">
                         <div class="custom-select">
-                          <select name="contact-who-2" id="contact-who-2">
+                          <select
+                            name="contact-who-2"
+                            id="contact-who-2"
+                            required
+                          >
                             <option value="0">Кем приходится</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -762,106 +770,90 @@
             <div class="requisites">
               <h3 class="form-title">Куда поступят деньги:</h3>
               <div class="radio-wrapper">
-                <label class="radio-container click-container"
+                <label
+                  class="radio-container js-requisites-radio click-container"
+                  data-show="card"
                   >Карта банка
                   <input type="radio" checked="checked" name="days" />
                   <span class="checkmark"></span>
                 </label>
-                <label class="radio-container click-container"
+                <label
+                  class="radio-container js-requisites-radio click-container"
+                  data-show="bill"
                   >Расчетный счёт
                   <input type="radio" name="days" />
                   <span class="checkmark"></span>
                 </label>
               </div>
 
-              <button
-                type="button"
-                class="button-reset button-add border-button js-call-modal js-add-requisites"
-                data-call="addModal"
-              >
-                Добавить карту
-              </button>
-
-              <div class="requisites-body js-requisites" data-requisites="card">
-                <div class="input-grid js-code-row">
-                  <input
-                    type="text"
-                    pattern="\d*"
-                    minlength="4"
-                    maxlength="4"
-                    class="card-input"
-                    required
-                  />
-                  <input
-                    type="text"
-                    pattern="\d*"
-                    minlength="4"
-                    maxlength="4"
-                    class="card-input"
-                    required
-                  />
-                  <input
-                    type="text"
-                    pattern="\d*"
-                    minlength="4"
-                    maxlength="4"
-                    class="card-input"
-                    required
-                  />
-                  <input
-                    type="text"
-                    pattern="\d*"
-                    minlength="4"
-                    maxlength="4"
-                    class="card-input"
-                    required
-                  />
-                </div>
-                <div class="logos">
-                  <div class="service">
-                    <img
-                      src="../assets/icons/profileIcons/visa.png"
-                      alt="visa"
-                    />
-                  </div>
-                  <div class="bank">
-                    <img
-                      src="../assets/icons/profileIcons/kaspi.png"
-                      alt="kaspi"
-                    />
-                  </div>
-                </div>
-              </div>
-
               <div
-                class="requisites-body bill-body js-requisites"
-                data-requisites="bill"
+                class="requisites-container js-requisites-container"
+                data-container="card"
               >
-                <input type="text" maxlength="24" class="bill-input" />
-                <div class="logos">
-                  <div class="bank">
-                    <img
-                      src="../assets/icons/profileIcons/kaspi.png"
-                      alt="kaspi"
+                <button
+                  type="button"
+                  class="button-reset button-add border-button js-call-modal js-add-requisites"
+                  data-add="card"
+                >
+                  Добавить карту
+                </button>
+                <div
+                  class="requisites-body js-requisites hidden-element"
+                  data-requisites="card"
+                >
+                  <div class="input-grid js-code-row">
+                    <input
+                      type="text"
+                      pattern="\d*"
+                      minlength="4"
+                      maxlength="4"
+                      class="card-input"
+                      required
+                    />
+                    <input
+                      type="text"
+                      pattern="\d*"
+                      minlength="4"
+                      maxlength="4"
+                      class="card-input"
+                      required
+                    />
+                    <input
+                      type="text"
+                      pattern="\d*"
+                      minlength="4"
+                      maxlength="4"
+                      class="card-input"
+                      required
+                    />
+                    <input
+                      type="text"
+                      pattern="\d*"
+                      minlength="4"
+                      maxlength="4"
+                      class="card-input"
+                      required
                     />
                   </div>
-                </div>
-              </div>
-
-              <div class="dropdown">
-                <p class="dropdown-label">Сохраненные счета:</p>
-                <div class="choosen-item">
-                  <div class="item-icon">
-                    <img
-                      src="../assets/icons/profileIcons/kaspi-dropdown.png"
-                      alt="kaspi"
-                    />
+                  <div class="logos">
+                    <div class="service">
+                      <img
+                        src="../assets/icons/profileIcons/visa.png"
+                        alt="visa"
+                      />
+                    </div>
+                    <div class="bank">
+                      <img
+                        src="../assets/icons/profileIcons/kaspi.png"
+                        alt="kaspi"
+                      />
+                    </div>
                   </div>
-                  <p class="item-text">**** **** **** 5468</p>
                 </div>
 
-                <div class="items-list">
-                  <div class="item">
+                <div class="dropdown hidden-element" data-requisites="card">
+                  <p class="dropdown-label">Сохраненные карты:</p>
+                  <div class="choosen-item">
                     <div class="item-icon">
                       <img
                         src="../assets/icons/profileIcons/kaspi-dropdown.png"
@@ -870,23 +862,111 @@
                     </div>
                     <p class="item-text">**** **** **** 5468</p>
                   </div>
-                  <div class="item">
-                    <div class="item-icon">
-                      <img
-                        src="../assets/icons/profileIcons/kaspi-dropdown.png"
-                        alt="kaspi"
-                      />
+
+                  <div class="items-list">
+                    <div class="item">
+                      <div class="item-icon">
+                        <img
+                          src="../assets/icons/profileIcons/kaspi-dropdown.png"
+                          alt="kaspi"
+                        />
+                      </div>
+                      <p class="item-text">**** **** **** 5468</p>
                     </div>
-                    <p class="item-text">**** **** **** 2145</p>
+                    <div class="item">
+                      <div class="item-icon">
+                        <img
+                          src="../assets/icons/profileIcons/kaspi-dropdown.png"
+                          alt="kaspi"
+                        />
+                      </div>
+                      <p class="item-text">**** **** **** 2145</p>
+                    </div>
+                    <div class="item">
+                      <div class="item-icon">
+                        <img
+                          src="../assets/icons/profileIcons/kaspi-dropdown.png"
+                          alt="kaspi"
+                        />
+                      </div>
+                      <p class="item-text">**** **** **** 3566</p>
+                    </div>
+                    <div class="item" data-call="addModal">
+                      <p class="item-text">добавить карту</p>
+                    </div>
                   </div>
-                  <div class="item">
+                </div>
+              </div>
+
+              <div
+                class="requisites-container js-requisites-container hidden-element"
+                data-container="bill"
+              >
+                <button
+                  type="button"
+                  class="button-reset button-add border-button js-call-modal js-add-requisites"
+                  data-add="bill"
+                >
+                  Добавить счет
+                </button>
+                <div
+                  class="requisites-body bill-body js-requisites hidden-element"
+                  data-requisites="bill"
+                >
+                  <input type="text" maxlength="24" class="bill-input" />
+                  <div class="logos">
+                    <div class="bank">
+                      <img
+                        src="../assets/icons/profileIcons/kaspi.png"
+                        alt="kaspi"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="dropdown hidden-element" data-requisites="bill">
+                  <p class="dropdown-label">Сохраненные счета:</p>
+                  <div class="choosen-item">
                     <div class="item-icon">
                       <img
                         src="../assets/icons/profileIcons/kaspi-dropdown.png"
                         alt="kaspi"
                       />
                     </div>
-                    <p class="item-text">**** **** **** 3566</p>
+                    <p class="item-text">**** **** **** 5468</p>
+                  </div>
+
+                  <div class="items-list">
+                    <div class="item">
+                      <div class="item-icon">
+                        <img
+                          src="../assets/icons/profileIcons/kaspi-dropdown.png"
+                          alt="kaspi"
+                        />
+                      </div>
+                      <p class="item-text">**** **** **** 5468</p>
+                    </div>
+                    <div class="item">
+                      <div class="item-icon">
+                        <img
+                          src="../assets/icons/profileIcons/kaspi-dropdown.png"
+                          alt="kaspi"
+                        />
+                      </div>
+                      <p class="item-text">**** **** **** 2145</p>
+                    </div>
+                    <div class="item">
+                      <div class="item-icon">
+                        <img
+                          src="../assets/icons/profileIcons/kaspi-dropdown.png"
+                          alt="kaspi"
+                        />
+                      </div>
+                      <p class="item-text">**** **** **** 3566</p>
+                    </div>
+                    <div class="item" data-call="addModal">
+                      <p class="item-text">добавить счет</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -963,7 +1043,7 @@
     <!-- MAIN END -->
     <!-- MODALS START -->
     <div
-      class="qm-modal requisites-modal js-modal"
+      class="qm-modal requisites-modal js-modal js-requisites-modal"
       data-modal="addModal"
       data-modal-setting="close"
     >
@@ -974,7 +1054,54 @@
         <div class="qm-modal-body">
           <h2>Подтверждение номера</h2>
 
-          <div class="requisites-body bill-body js-requisites">
+          <div class="requisites-body js-requisites" data-requisites="card">
+            <div class="input-grid js-code-row">
+              <input
+                type="text"
+                pattern="\d*"
+                minlength="4"
+                maxlength="4"
+                class="card-input"
+                required
+              />
+              <input
+                type="text"
+                pattern="\d*"
+                minlength="4"
+                maxlength="4"
+                class="card-input"
+                required
+              />
+              <input
+                type="text"
+                pattern="\d*"
+                minlength="4"
+                maxlength="4"
+                class="card-input"
+                required
+              />
+              <input
+                type="text"
+                pattern="\d*"
+                minlength="4"
+                maxlength="4"
+                class="card-input"
+                required
+              />
+            </div>
+            <div class="logos">
+              <div class="service">
+                <img src="../assets/icons/profileIcons/visa.png" alt="visa" />
+              </div>
+              <div class="bank">
+                <img src="../assets/icons/profileIcons/kaspi.png" alt="kaspi" />
+              </div>
+            </div>
+          </div>
+          <div
+            class="requisites-body bill-body js-requisites hidden-element"
+            data-requisites="bill"
+          >
             <input type="text" maxlength="24" class="bill-input" />
             <div class="logos">
               <div class="bank">
