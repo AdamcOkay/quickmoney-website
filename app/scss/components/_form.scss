@@ -246,6 +246,10 @@ input:focus + .input-label {
 
 .select-selected {
   padding: 17px 20px;
+
+  @media (min-width: $bp-lg) {
+    padding: 19px 20px;
+  }
 }
 
 .select-items div,
@@ -259,6 +263,34 @@ input:focus + .input-label {
   @media (min-width: $bp-lg) {
     font-size: 18px;
     line-height: 20px;
+  }
+}
+
+.select-label {
+  display: none;
+  position: absolute;
+  top: 7px;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 12px;
+
+  @media (min-width: $bp-lg) {
+    top: 6px;
+    font-size: 14px;
+    line-height: 15px;
+  }
+}
+
+.select-active {
+  padding-top: 24px;
+  padding-bottom: 12px;
+  font-weight: 500;
+
+  .select-label {
+    display: block;
+  }
+  @media (min-width: $bp-lg) {
+    padding-bottom: 13px;
   }
 }
 

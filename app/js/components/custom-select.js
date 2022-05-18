@@ -12,8 +12,19 @@ document.addEventListener("DOMContentLoaded", () => {
       const selectedOption = document.createElement("DIV");
 
       selectedOption.classList.add("select-selected", "selected-placeholder");
-      selectedOption.innerHTML =
+
+      const selectLabel = document.createElement("DIV");
+      selectLabel.classList.add("select-label");
+
+      selectLabel.innerHTML = selectElement.options[0].innerHTML;
+
+      const selectedOptionItem = document.createElement("DIV");
+      selectedOptionItem.classList.add("select-selected__item");
+      selectedOptionItem.innerHTML =
         selectElement.options[selectElement.selectedIndex].innerHTML;
+
+      selectedOption.appendChild(selectLabel);
+      selectedOption.appendChild(selectedOptionItem);
 
       customSelects[index].appendChild(selectedOption);
 
@@ -34,10 +45,12 @@ document.addEventListener("DOMContentLoaded", () => {
         selectOption.addEventListener("click", (e) => {
           const target = e.target;
 
+          selectedOption.classList.add("select-active");
+
           for (let j = 0; j < selectElement.length; j++) {
             if (target.innerHTML === selectElement.options[j].innerHTML) {
               selectElement.selectedIndex = j;
-              selectedOption.innerHTML = target.innerHTML;
+              selectedOptionItem.innerHTML = target.innerHTML;
 
               const sameAsSelected =
                 selectItems.querySelectorAll(".same-as-selected");
@@ -88,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       selectedOption.addEventListener("click", (e) => {
         e.stopPropagation();
-        const target = e.target;
+        const target = e.currentTarget;
 
         closeAllSelect(target);
         target.nextSibling.scrollTo({ top: 0 });
