@@ -199,17 +199,12 @@
       padding: 10px 0;
       left: 0;
       border-top: 1px solid #f4f4f4;
+      background: #fff;
       bottom: 0;
     }
 
     .button {
       margin: 0 auto;
-    }
-
-    @media (min-width: $bp-md) {
-      .button-block {
-        display: none;
-      }
     }
   }
 
@@ -220,6 +215,11 @@
       h2 {
         padding-left: 0;
       }
+    }
+
+    .button-block {
+      position: sticky;
+      bottom: 0;
     }
 
     @media (min-width: $bp-md) {
@@ -241,8 +241,19 @@
       }
 
       .button-block {
+        display: block;
+        position: static;
+        border: none;
         grid-area: button;
         margin-bottom: 50px;
+      }
+    }
+  }
+
+  .details {
+    @media (min-width: $bp-md) {
+      .button-block {
+        display: none;
       }
     }
   }

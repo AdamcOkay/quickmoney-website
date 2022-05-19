@@ -123,4 +123,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     loginButton.disabled = true;
   });
+
+  const phoneInputs = document.querySelectorAll(".phone-input");
+  phoneInputs.forEach((input) => {
+    if (input) {
+      input.addEventListener("focus", () => {
+        input.value = "+7";
+      });
+    }
+  });
 });

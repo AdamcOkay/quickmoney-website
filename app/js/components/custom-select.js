@@ -28,6 +28,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
       customSelects[index].appendChild(selectedOption);
 
+      if (
+        selectedOptionItem.textContent !== selectElement.options[0].textContent
+      ) {
+        selectedOption.classList.add("select-active");
+      }
+
       const selectItemsWrapper = document.createElement("DIV");
       selectItemsWrapper.classList.add("select-items-wrapper", "select-hide");
 
