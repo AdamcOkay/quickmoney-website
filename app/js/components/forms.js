@@ -5,40 +5,51 @@ document.addEventListener("DOMContentLoaded", () => {
     const formInputs = [...form.querySelectorAll("input")],
       submitButton = form.querySelector(`.js-submit-button`);
 
+    const handleInputChange = (input) => {
+      const isFormValid = formInputs.every((input) => input.checkValidity()),
+        extendModalInfo = form.querySelector(".extend-info");
+
+      if (isFormValid) {
+        submitButton.disabled = false;
+        if (extendModalInfo) {
+          extendModalInfo.style.opacity = 1;
+        }
+      } else {
+        submitButton.disabled = true;
+      }
+
+      if (input.classList.contains("error-input")) {
+        const inputWrapper = input.parentElement,
+          errorMessage = inputWrapper.nextElementSibling;
+
+        input.classList.remove("error-input");
+        errorMessage.remove();
+      }
+
+      // таймер нужен для инпутов, которым значение добавляется при фокусе
+      // например для инпутов номера телефона
+      setTimeout(() => {
+        if (input.value.length > 0) {
+          input.classList.add("edited-input");
+        } else {
+          input.classList.remove("edited-input");
+        }
+      }, 100);
+
+      if (form.classList.contains("verification-form") && isFormValid) {
+        submitButton.textContent = "Подтвердить";
+      }
+    };
+
     if (submitButton) {
       formInputs.forEach((input) => {
+        handleInputChange(input);
+
         input.addEventListener("input", () => {
-          const isFormValid = formInputs.every((input) =>
-              input.checkValidity()
-            ),
-            extendModalInfo = form.querySelector(".extend-info");
-
-          if (isFormValid) {
-            submitButton.disabled = false;
-            if (extendModalInfo) {
-              extendModalInfo.style.opacity = 1;
-            }
-          } else {
-            submitButton.disabled = true;
-          }
-
-          if (input.classList.contains("error-input")) {
-            const inputWrapper = input.parentElement,
-              errorMessage = inputWrapper.nextElementSibling;
-
-            input.classList.remove("error-input");
-            errorMessage.remove();
-          }
-
-          if (input.value.length > 0) {
-            input.classList.add("edited-input");
-          } else {
-            input.classList.remove("edited-input");
-          }
-
-          if (form.classList.contains("verification-form") && isFormValid) {
-            submitButton.textContent = "Подтвердить";
-          }
+          handleInputChange(input);
+        });
+        input.addEventListener("focus", () => {
+          handleInputChange(input);
         });
       });
     }
@@ -128,7 +139,14 @@ document.addEventListener("DOMContentLoaded", () => {
   phoneInputs.forEach((input) => {
     if (input) {
       input.addEventListener("focus", () => {
-        input.value = "+7";
+        if (input.value.length <= 0) {
+          input.value = "+7";
+
+          setTimeout(() => {
+            const end = input.value.length;
+            input.setSelectionRange(end, end);
+          }, 100);
+        }
       });
     }
   });
