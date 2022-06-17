@@ -368,10 +368,12 @@
         margin: 30px 0 0 auto;
       }
 
-      .border-button {
-        margin: 0 30px 0 auto;
-        padding: 22px 70px;
-        font-size: 18px;
+      .loan-controls {
+        display: flex;
+
+        .button--white {
+          margin-left: 15px;
+        }
       }
 
       .transaction-story {

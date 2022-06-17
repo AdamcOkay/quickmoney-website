@@ -19,6 +19,10 @@
     margin-top: 5px;
   }
 
+  &--white {
+    background-color: #fff;
+  }
+
   @media (min-width: $bp-md) {
     padding: 21px 0;
     font-size: 18px;
@@ -33,10 +37,17 @@
     &:hover {
       background: #f8d612;
     }
+
+    &--white:hover {
+      background-color: rgb(211, 211, 211);
+    }
   }
 
   &:active {
     background: #f5d104;
+  }
+  &--white:active {
+    background-color: rgb(185, 183, 183);
   }
 }
 
