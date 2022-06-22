@@ -635,5 +635,76 @@
       </div>
     </main>
     <!-- MAIN END -->
+
+    <div
+      class="qm-modal js-modal expire-modal qm-modal--active"
+      data-modal="expireModal"
+    >
+      <div class="qm-modal-content">
+        <div class="qm-modal-body">
+          <h2>Внимание!</h2>
+          <p>
+            Для того, чтобы продолжить, Вам необходимо обновить данные
+            удостоверения личности
+          </p>
+
+          <form class="expire-form">
+            <div class="input-row">
+              <div class="input-col">
+                <div class="input-wrapper">
+                  <input
+                    type="text"
+                    id="doc-id"
+                    class="doc-id"
+                    name="doc-id"
+                    pattern="[0-9]{3} [0-9]{3} [0-9]{3} [0-9]{3}"
+                    required
+                  />
+                  <label class="input-label" for="doc-id">ИИН</label>
+                </div>
+              </div>
+              <div class="input-col">
+                <div class="input-wrapper">
+                  <input
+                    type="tel"
+                    id="expire-phone"
+                    name="expire-phone"
+                    class="phone-input"
+                    required
+                  />
+                  <label class="input-label" for="expire-phone"
+                    >Номер телефона</label
+                  >
+                </div>
+              </div>
+              <div class="input-col">
+                <div class="input-wrapper">
+                  <input
+                    type="text"
+                    id="smscode"
+                    name="smscode"
+                    class="sms-code"
+                    required
+                  />
+                  <label class="input-label" for="smscode">СМС-код</label>
+                </div>
+              </div>
+              <label class="checkbox-container click-container"
+                >Ознакомлен(на) со всеми предоставленными документами.
+                <input type="checkbox" checked required />
+                <span class="checkmark"></span>
+              </label>
+            </div>
+            <button
+              type="button"
+              class="button-reset button js-submit-button"
+              disabled="disabled"
+            >
+              Отправить SMS
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

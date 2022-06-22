@@ -118,8 +118,9 @@
   }
 
   .extend-grid {
+    --col-count: 2;
     display: grid;
-    grid-template-columns: repeat(3, 103px);
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     gap: 10px;
     justify-content: center;
     margin: 15px 0 25px;
@@ -152,7 +153,7 @@
   }
 
   .stretched-radio {
-    grid-column: 1 / span 3;
+    grid-column: 1 / span var(--col-count);
   }
 
   .extend-info {
@@ -228,5 +229,24 @@
 
   .requisites-body {
     margin-bottom: 20px;
+  }
+}
+
+.expire-modal {
+  h2 {
+    margin-bottom: 5px;
+  }
+
+  p {
+    padding-bottom: 5px;
+  }
+
+  .expire-form {
+    margin-top: 20px;
+  }
+
+  .input-row {
+    grid-template-columns: 1fr;
+    gap: 15px;
   }
 }
