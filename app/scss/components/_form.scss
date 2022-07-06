@@ -9,6 +9,16 @@
   position: relative;
 }
 
+.input-col--grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 15px;
+
+  .input-wrapper {
+    height: max-content;
+  }
+}
+
 .input-label {
   position: absolute;
   top: 50%;
@@ -22,6 +32,10 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
+  }
+
+  .input-col--grid {
+    row-gap: 30px;
   }
 
   .button-col {

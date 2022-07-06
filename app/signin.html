@@ -132,7 +132,7 @@
       <div class="container content-wrapper">
         <form action="">
           <div class="input-row">
-            <div class="input-col">
+            <div class="input-col input-col--grid">
               <div class="input-wrapper">
                 <input
                   type="text"
@@ -144,8 +144,6 @@
                 />
                 <label class="input-label" for="doc-id">ИИН</label>
               </div>
-            </div>
-            <div class="input-col">
               <div class="input-wrapper">
                 <input
                   type="tel"
@@ -159,19 +157,17 @@
               </div>
             </div>
 
-            <div class="input-col">
+            <div class="input-col input-col--grid">
               <div class="input-wrapper">
                 <input type="text" id="firstname" name="firstname" required />
                 <label class="input-label" for="firstname">Имя</label>
               </div>
-            </div>
-            <div class="input-col">
               <div class="input-wrapper">
                 <input type="text" id="lastname" name="lastname" required />
                 <label class="input-label" for="lastname">Фамилия</label>
               </div>
             </div>
-            <div class="input-col">
+            <div class="input-col input-col--grid">
               <div class="input-wrapper">
                 <input
                   type="text"
@@ -182,14 +178,14 @@
                 />
                 <label class="input-label" for="smscode">СМС-код</label>
               </div>
-            </div>
-            <div class="input-col">
-              <label class="checkbox-container click-container"
-                >Ознакомлен(на) с условиями <a href="#">публичной оферты</a>,
-                также даю свое согласие на сбор персональных данных.
-                <input type="checkbox" required />
-                <span class="checkmark"></span>
-              </label>
+              <div class="input-wrapper">
+                <label class="checkbox-container click-container"
+                  >Ознакомлен(на) с условиями <a href="#">публичной оферты</a>,
+                  также даю свое согласие на сбор персональных данных.
+                  <input type="checkbox" required />
+                  <span class="checkmark"></span>
+                </label>
+              </div>
             </div>
             <div class="input-col button-col">
               <button
